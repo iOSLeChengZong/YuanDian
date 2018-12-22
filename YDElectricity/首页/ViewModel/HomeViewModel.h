@@ -1,0 +1,82 @@
+//
+//  HomeViewModel.h
+//  YDElectricity
+//
+//  Created by 元典 on 2018/12/19.
+//  Copyright © 2018 yuandian. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "YDNetManager.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+//请求更多还是请求刷新
+typedef NS_ENUM(NSInteger,RequestMode) {
+    RequestModeRefresh,
+    RequestModeMore,
+};
+
+//热销爆款还是人气推荐
+typedef NS_ENUM(NSInteger,HotOrRecomend) {
+    HotOrRecomendH,
+    HotOrRecomendR,
+};
+
+@interface HomeViewModel : NSObject
+//首页头部
+//1.根据UI
+/** 轮播图URL */
+-(NSArray *)advertiseURLS;
+/** 栏目item数量 */
+@property(nonatomic,assign)NSInteger culomnitemNum;
+/** 栏目标题 */
+-(NSString *)culomnCellTitleForItem:(NSIndexPath *)indexPath;
+/** 栏目图片名字 */
+-(NSString *)culomnCellImageNameForItem:(NSIndexPath *)indexPath;
+/** 秒杀商品 URL */
+-(NSURL *)secondSkillGoodURL;
+
+
+
+//2.根据接口
+/** 头部广告URL */
+@property(nonatomic,strong)NSMutableArray<AdvertisementList *> *advertiseMuArr;
+@property(nonatomic,strong)NSMutableArray<CategoryClassList *> *categoryMuArr;
+@property(nonatomic,strong)NSMutableArray<GoodsSpikeList *> *goodSpikeMuArr;
+-(void)getHomeHeaderModelDataCompletionHandler:(void(^)(NSError *error))completionHandler;
+
+
+//首页商品
+//1.根据UI
+/** 商品item 数量*/
+@property(nonatomic,assign)NSInteger goodCollectionVItemNum;
+/** 商品图片 */
+-(NSURL *)goodCollectionVItemImageURLAtIndexPath:(NSIndexPath *)indexPath;
+/** 商品来源网站 */
+-(NSString *)goodCollectionVItemSourseAtIndexPath:(NSIndexPath *)indexPath;
+/** 商品名称 */
+-(NSString *)goodCollectionVItemMainTitleAtIndexPath:(NSIndexPath *)indexPath;
+/** 商品优惠信息 */
+-(NSString *)goodCollectionVItemSecondTitleAtIndexPath:(NSIndexPath *)indexPath;
+/** 原价 */
+-(NSString *)goodCollectionVItemSoursePriceAtIndexPath:(NSIndexPath *)indexPath;
+/** 商品券 */
+-(NSString *)goodCollectionVitemTicketPriceAtIndexPath:(NSIndexPath *)indexPath;
+/** 商品月销 */
+-(NSInteger)goodCollectionVItemMonthSaleNumAtIndexPath:(NSIndexPath *)indexPath;
+/** 券后价 */
+-(NSString *)goodCollectionVItemAfterSalePriceAtIndexPath:(NSIndexPath *)indexPath;
+/** 收益 */
+-(NSString *)goodCollectionVItemProfitAtIndexPath:(NSIndexPath *)indexPath;
+
+
+//2.根据接口
+@property(nonatomic,assign)NSInteger pageNum;
+@property(nonatomic,strong)NSMutableArray<PageList *> *pageList;
+-(void)getHomeGoodModelDataRequestMode:(RequestMode)requestMode pageSize:(NSInteger)pageSize state:(HotOrRecomend)hotOrRecomend CompletionHandler:(void(^)(NSError *error))completionHandler;
+
+
+@end
+
+NS_ASSUME_NONNULL_END
