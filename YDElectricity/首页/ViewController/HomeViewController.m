@@ -15,6 +15,7 @@
 #import "CategoryViewController.h"
 #import "HomeViewModel.h"
 #import "InHomeHeaderCell.h"
+#import "Factory.h"
 
 
 #define kHomeHeaderCollectionViewCell @"HomeHeaderCollectionViewCell"
@@ -24,8 +25,10 @@
 
 
 
-@interface HomeViewController ()<SearchBarViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface HomeViewController ()<SearchBarViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+
 @property (nonatomic,strong) HomeViewModel *homeVM;
 @property (nonatomic,assign) HotOrRecomend hotOrRecomend;
 @property (nonatomic,assign) RequestMode requestMode;
@@ -49,16 +52,18 @@
 #pragma mark -- 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //请求数据
-    [self getDataRequest];
-    //设置顶部导航栏
-    [self setUpNavigagionItem];
     //注册collectionViewCell
     [self collectionRegisterCell];
-    self.requestMode = RequestModeRefresh;
-    self.hotOrRecomend = HotOrRecomendR;
     
-    
+    //请求数据
+    [self.view showBusyHUD];
+//    [self requestData];
+
+    //添加头部脚部刷新
+//    [self addHeaderAndFooterRefresh];
+    //设置顶部导航栏
+    [self setUpNavigagionItem];
+
 }
 
 
@@ -126,9 +131,22 @@
     
     HomeSectionHeaderView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     [view addClickHandler:^(RequestMode requestMode,HotOrRecomend hotOrRecomend) {
+        if (self.requestMode == requestMode && self.hotOrRecomend == hotOrRecomend) {
+            return ;
+        }
         self.requestMode = requestMode;
         self.hotOrRecomend = hotOrRecomend;
-        [self getDataRequest];
+        //忙提示
+        [self.view showBusyHUD];
+        [self.homeVM getHomeGoodModelDataRequestMode:RequestModeRefresh pageSize:20 state:self.hotOrRecomend CompletionHandler:^(NSError * _Nonnull error) {
+            if (!error) {
+                [self.collectionView reloadData];
+                [self.view hideBusyHUD];
+                return ;
+            }
+            [self.view showWarning:@"网络错误"];
+        }];
+        
     }];
     
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
@@ -155,7 +173,7 @@
 //item尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return CGSizeMake(kScreenW, 300);
+        return CGSizeMake(kScreenW, kHight * 436);
     }
     return CGSizeMake(kScreenW, 150);
 }
@@ -187,6 +205,33 @@
     return CGSizeZero;
 }
 
+#pragma mark -- UIScrollviewDelegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+//    if (scrollView==self.collectionView) {
+//        
+//        NSLog(@"%f",scrollView.contentOffset.y);
+//        CGFloat offsetY = scrollView.contentOffset.y;
+//        if (scrollView.contentOffset.y>=-20 && scrollView.contentOffset.y<50) {
+//            self.navigationController.navigationBarHidden = NO;
+//            
+//            self.topView.backgroundColor=[UIColor colorWithRed:226/255.0f green:67/255.0f  blue:70/255.0f  alpha:offsetY*2/100];
+//            
+//            //NSLog(@"变色");
+//        }else if (scrollView.contentOffset.y<-20){
+//            
+//            self.navigationController.navigationBarHidden = YES;
+//            self.topView.backgroundColor=[UIColor colorWithRed:226/255.0f green:67/255.0f  blue:70/255.0f  alpha:0.0];
+//        }else{
+//            
+//            self.navigationController.navigationBarHidden = NO;
+//            self.topView.backgroundColor=[UIColor colorWithRed:226/255.0f green:67/255.0f  blue:70/255.0f  alpha:0.9];
+//        }
+//        
+//    }
+    
+}
+
 #pragma mark -- 方法
 -(void)setUpNavigagionItem{
     //设置背景
@@ -194,11 +239,14 @@
     //设置左侧按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem BarButtonItemWithTitle:@"分类" stytle:UIBarButtonItemStylePlain target:self action:@selector(categoryBtnClick)];
     //设置右侧按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem BarButtonItemWithBackgrounImageName:@"" highBackgroundImageName:@"" target:self aciton:@selector(shopCarBtnClick)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem BarButtonItemWithBackgrounImageName:@"y_h_shoppingCart1" highBackgroundImageName:@"y_h_shoppingCart1" target:self aciton:@selector(shopCarBtnClick)];
     //将将搜索条放在titleView上
-    SearchBarView *searchView = [[SearchBarView alloc] initWithFrame:CGRectMake(0, 7, 240, 30)];
-    searchView.delegate = self;
-    self.navigationItem.titleView = searchView;
+//    SearchBarView *searchView = [[SearchBarView alloc] initWithFrame:CGRectMake(0, 7, 240, 30)];
+//    searchView.delegate = self;
+    [Factory addSearchItemToVC:self clickHandler:^{
+        NSLog(@"搜索被点击了");
+    }];
+//    self.navigationItem.titleView = searchView;
 
 }
 
@@ -223,34 +271,18 @@
     [self.collectionView registerNib:[UINib nibWithNibName:kHomeProductCell bundle:nil] forCellWithReuseIdentifier:kHomeProductCell];
 }
 
--(void)getDataRequest{
+-(void)addHeaderAndFooterRefresh{
     //添加头部刷新
     [self.collectionView addHeaderRefreshingBlock:^{
-        //请求头部数据
-        [self.homeVM getHomeHeaderModelDataCompletionHandler:^(NSError * _Nonnull error) {
-            if (!error) {
-                //                [self.collectionView reloadData];
-                //                [self.collectionView endHeaderRefresh];
-                
-                [self.homeVM getHomeGoodModelDataRequestMode:self.requestMode pageSize:20 state:self.hotOrRecomend CompletionHandler:^(NSError * _Nonnull error) {
-                    if (!error) {
-                        [self.collectionView reloadData];
-                        [self.collectionView endHeaderRefresh];
-                    }
-                }];
-                
-            }
-        }];
+        [self requestData];
         
     }];
-    
-    [self.collectionView beginHeaderRefresh];
     
     //添加脚部刷新
     [self.collectionView addFooterBackRefresh:^{
         [self.homeVM getHomeHeaderModelDataCompletionHandler:^(NSError * _Nonnull error) {
             if (!error) {
-                [self.homeVM getHomeGoodModelDataRequestMode:self.requestMode pageSize:20 state:self.hotOrRecomend CompletionHandler:^(NSError * _Nonnull error) {
+                [self.homeVM getHomeGoodModelDataRequestMode:RequestModeMore pageSize:20 state:self.hotOrRecomend CompletionHandler:^(NSError * _Nonnull error) {
                     if (!error) {
                         [self.collectionView reloadData];
                         [self.collectionView endFooterRefresh];
@@ -260,6 +292,27 @@
         }];
     }];
 }
+
+-(void)requestData{
+    [self.collectionView addHeaderRefreshingBlock:^{
+        //请求头部数据
+        [self.homeVM getHomeHeaderModelDataCompletionHandler:^(NSError * _Nonnull error) {
+            if (!error) {
+                [self.homeVM getHomeGoodModelDataRequestMode:RequestModeRefresh pageSize:20 state:self.hotOrRecomend CompletionHandler:^(NSError * _Nonnull error) {
+                    if (!error) {
+                        [self.collectionView reloadData];
+                        [self.view hideBusyHUD];
+                        return ;
+                    }
+                    [self.view showWarning:@"网络错误"];
+                }];
+                return ;
+            }
+            [self.view showWarning:@"网络错误"];
+        }];
+    }];
+}
+     
 
 
 /*
@@ -271,5 +324,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

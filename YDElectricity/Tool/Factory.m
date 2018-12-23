@@ -61,19 +61,27 @@
 
 + (void)addSearchItemToVC:(UIViewController *)vc clickHandler:(void(^)(void))clickHandler{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 50, 44);
-    [btn setImage:[UIImage imageNamed:@"搜索_默认"] forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:@"搜索_按下"] forState:UIControlStateHighlighted];
+//    btn.frame = CGRectMake(0, 42, 50, 44);
+    CGRect frame = btn.frame;
+    btn.center = CGPointMake(kScreenW * 0.5, 42);
+    frame.size = CGSizeMake(264, 31);
     
+    NSLog(@"buttonCenter:%f",btn.center.x);
+    
+    btn.frame =  frame;
+    [btn setImage:[UIImage imageNamed:@"y_h_sousuokuang0"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"y_h_sousuokuang1"] forState:UIControlStateHighlighted];
+    vc.navigationItem.titleView = btn;
+    NSLog(@"navCenter:%f",vc.navigationItem.titleView.center.x);
     [btn bk_addEventHandler:^(id sender) {
         clickHandler();
     } forControlEvents:UIControlEventTouchUpInside];
     //把视图的边角变为圆形, cornerRadius圆角半径
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     //弹簧控件, 修复边距
     UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     spaceItem.width = -15;
-    vc.navigationItem.rightBarButtonItems = @[spaceItem,backItem];
+    vc.navigationItem.rightBarButtonItems = @[spaceItem/*,backItem*/];
     
 }
 @end
