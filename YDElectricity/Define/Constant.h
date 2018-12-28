@@ -23,6 +23,7 @@
 #define iPhoneXORXS ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #define iPhoneXR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
 #define iPhoneXSMax ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhoneX iPhoneXORXS | iPhoneXR | iPhoneXSMax
 // 状态栏高度
 #define STATUS_BAR_HEIGHT (iPhoneX ? 44.f : 20.f)
 // 导航栏高度
@@ -33,8 +34,8 @@
 
 /// Tab Bar高度
 #define TABBAR_HEIGHT (iPhoneX ? (49.f+34.f) : 49.f)
-#define kWidth kScreenW / 375.0 //这里的375我是针对6s为标准适配的,如果需要其他标准可以修改
-#define kHight kScreenH / 667.0
+#define kWidthScall kScreenW / 375.0 //这里的375我是针对6s为标准适配的,如果需要其他标准可以修改
+#define kHightScall kScreenH / 667.0
 
 //字体适配
 #define font(R) (R)*(kScreenWidth)/320.0  //这里是5s屏幕字体

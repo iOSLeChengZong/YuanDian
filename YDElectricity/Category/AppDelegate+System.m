@@ -26,7 +26,7 @@
     [MLTransition validatePanBackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypeScreenEdgePan];
     
     //设置全局UINavigationBar 和 UITabbar
-//    [self setupGlobalUI];
+    [self setupGlobalUI];
     
 }
     
@@ -42,8 +42,9 @@
     
     //设置UITabBar
     [UITabBar appearance].translucent = NO;//为了使用设置的颜色与正常的颜色没有色差
-    [UITabBar appearance].barTintColor = kRGBA(237, 236, 235, 1.0);
-    self.window.tintColor = kNaviBarBGColor;
+//    [UITabBar appearance].barTintColor = kRGBA(237, 236, 235, 1.0);
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateNormal];
+    self.window.tintColor = [UIColor redColor];//kNaviBarBGColor;
 
     
     

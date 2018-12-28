@@ -24,8 +24,6 @@
         NSLog(@"error %@",error);
     }];
     
-    
-    
 }
     
 +(id)POST:(NSString *)path parameters:(id)paremeters progress:(void (^)(NSProgress * _Nonnull))downloadProgress completionHandler:(void (^)(id _Nonnull, NSError * _Nonnull))completionHandler{
@@ -39,4 +37,20 @@
     }];
     
 }
+
+
++(id)GETAllPath:(NSString *)path parameters:(id)parmeters progress:(void (^)(NSProgress * _Nonnull))downloadProgress completionHandler:(void (^)(id _Nonnull, NSError * _Nonnull))completionHandler{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURLTaoBao]];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/html", @"text/plain", @"text/json", @"text/javascript", @"application/json"]];
+    //设置请求超时
+    manager.requestSerializer.timeoutInterval = 30;
+    
+    return [manager GET:path parameters:parmeters progress:downloadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        completionHandler(responseObject,nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completionHandler(nil,error);
+        NSLog(@"error %@",error);
+    }];
+}
+
 @end

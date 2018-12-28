@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger,HotOrRecomend) {
 /** 商品券 */
 -(NSString *)goodCollectionVitemTicketPriceAtIndexPath:(NSIndexPath *)indexPath;
 /** 商品月销 */
--(NSInteger)goodCollectionVItemMonthSaleNumAtIndexPath:(NSIndexPath *)indexPath;
+-(NSString *)goodCollectionVItemMonthSaleNumAtIndexPath:(NSIndexPath *)indexPath;
 /** 券后价 */
 -(NSString *)goodCollectionVItemAfterSalePriceAtIndexPath:(NSIndexPath *)indexPath;
 /** 收益 */

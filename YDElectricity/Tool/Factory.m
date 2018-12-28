@@ -63,25 +63,44 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    btn.frame = CGRectMake(0, 42, 50, 44);
     CGRect frame = btn.frame;
+    
     btn.center = CGPointMake(kScreenW * 0.5, 42);
-    frame.size = CGSizeMake(264, 31);
+    frame.size = CGSizeMake(264 * kWidthScall, 31);
     
     NSLog(@"buttonCenter:%f",btn.center.x);
     
     btn.frame =  frame;
     [btn setImage:[UIImage imageNamed:@"y_h_sousuokuang0"] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"y_h_sousuokuang1"] forState:UIControlStateHighlighted];
+    
+//    btn.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin |UIViewAutoresizingFlexibleRightMargin;
+//    btn.autoresizesSubviews = YES;
+//
+//    CGRect leftViewbounds = vc.navigationItem.leftBarButtonItem.customView.bounds;
+//    CGRect rightViewbounds = vc.navigationItem.rightBarButtonItem.customView.bounds;
+//    
+//
+//    CGRect frame1;
+//    CGFloat maxWidth = leftViewbounds.size.width > rightViewbounds.size.width ? leftViewbounds.size.width : rightViewbounds.size.width;
+//    maxWidth += 15;//leftview 左右都有间隙，左边是5像素，右边是8像素，加2个像素的阀值 5 ＋ 8 ＋ 2
+//    frame1 = btn.frame;
+//
+//    frame1.size.width = kScreenW - maxWidth * 2;
+//    btn.frame = frame1;
+    
+    
     vc.navigationItem.titleView = btn;
+
     NSLog(@"navCenter:%f",vc.navigationItem.titleView.center.x);
     [btn bk_addEventHandler:^(id sender) {
         clickHandler();
     } forControlEvents:UIControlEventTouchUpInside];
     //把视图的边角变为圆形, cornerRadius圆角半径
 //    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    //弹簧控件, 修复边距
-    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    spaceItem.width = -15;
-    vc.navigationItem.rightBarButtonItems = @[spaceItem/*,backItem*/];
+//    //弹簧控件, 修复边距
+//    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+//    spaceItem.width = -15;
+//    vc.navigationItem.rightBarButtonItems = @[spaceItem/*,backItem*/];
     
 }
 @end

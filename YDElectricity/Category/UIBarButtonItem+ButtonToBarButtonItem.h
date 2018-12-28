@@ -20,6 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 图片加文字的BarButtonItem */
 +(instancetype)BarButtonItemWithImageName:(NSString *)imageName highlightImageName:(NSString *)highlightImageName title:(NSString *)title target:(id)target action:(SEL)action;
+
+/** 调整左边BarButtomItem间距 */
++(NSArray<UIBarButtonItem *> *)LeftBarButtomItems:(BOOL) isLeft ImageName:(NSString *)imageName highlightImageName:(NSString *)highlightImageName title:(NSString *)title target:(id)target action:(SEL)action;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

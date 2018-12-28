@@ -18,12 +18,12 @@
     [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
     [header setTitle:@"释放刷新" forState:MJRefreshStatePulling];
     [header setTitle:@"Loading ..." forState:MJRefreshStateRefreshing];
-//    header.lastUpdatedTimeLabel.hidden = YES;
-    
+    header.lastUpdatedTimeLabel.hidden = YES;
+
     // Set font
-    header.stateLabel.font = [UIFont systemFontOfSize:15];
-    header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:14];
-    
+    header.stateLabel.font = [UIFont systemFontOfSize:11];
+    header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:11];
+
     // Set textColor
     header.stateLabel.textColor = [UIColor redColor];
     header.lastUpdatedTimeLabel.textColor = [UIColor blueColor];

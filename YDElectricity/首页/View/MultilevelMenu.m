@@ -42,9 +42,10 @@
     
     if (self  == [super initWithFrame:frame]) {
         
-        if (categoryVM.categoryModels.count == 0) {
+        if (categoryVM.leftRowModels.count == 0) {
             return nil;
         }
+        
         
         _block=selectIndex;
         
@@ -52,20 +53,20 @@
         self.oldCellIndex = 0;//上一个被点击的cell默认为0;
         
         //tableView分离线颜色
-        self.leftSeparatorColor=UIColorFromRGB(0xE5E5E5);
+        self.leftSeparatorColor= [UIColor lightGrayColor];
         
         //左边默认背景颜色
-        self.leftBgColor = kNaviBarBGColor;
+        self.leftBgColor = [UIColor whiteColor];//kNaviBarBGColor;
         //左边选中背景颜色
         self.leftSelectBgColor = [UIColor whiteColor];
         
         //左边未选中背景颜色
-        self.leftUnSelectBgColor=kNaviBarBGColor;
+        self.leftUnSelectBgColor=[UIColor whiteColor];//kNaviBarBGColor;
         
         //左边点中字体颜色
-        self.leftSelectColor=kRGBA(45, 188, 157, 1.0);
+        self.leftSelectColor= [UIColor redColor];//kRGBA(45, 188, 157, 1.0);
         //左边字体未选中颜色
-        self.leftUnSelectColor = kRGBA(45, 188, 157, 1.0);
+        self.leftUnSelectColor = [UIColor lightGrayColor];//kRGBA(45, 188, 157, 1.0);
         
         self.isRecordLastScroll=NO;//是否记住当前位置
         
@@ -73,10 +74,10 @@
         
         _categoryVM = categoryVM;
         
-        _offsetScorllers = [NSMutableArray arrayWithCapacity:_categoryVM.categoryModels.count];
+        _offsetScorllers = [NSMutableArray arrayWithCapacity:_categoryVM.leftRowModels.count];
         
         //初始化数组
-        for (int i = 0; i < _categoryVM.categoryModels.count; ++i) {
+        for (int i = 0; i < _categoryVM.leftRowModels.count; ++i) {
             self.offsetScorllers[i] = [NSNumber numberWithFloat:0];
         }
         
@@ -84,11 +85,12 @@
         /**
          左边的视图
         */
-        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, kLeftWidth, frame.size.height)];
+        self.leftTablew=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, kLeftWidth * kWidthScall, frame.size.height)];
         self.leftTablew.dataSource=self;
         self.leftTablew.delegate=self;
         
         self.leftTablew.tableFooterView=[[UIView alloc] init];
+        
         [self addSubview:self.leftTablew];
         self.leftTablew.backgroundColor=self.leftBgColor;
         if ([self.leftTablew respondsToSelector:@selector(setLayoutMargins:)]) {
@@ -130,7 +132,13 @@
 
         self.backgroundColor=self.leftSelectBgColor;
         
-
+        
+    
+        //默认选中第一个
+        [self.leftTablew selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+        [self.categoryVM getCategoryRithDataWithParameter:self.categoryVM.leftRowModels[_selectIndex].ID completionHandler:^(NSError * _Nonnull error) {
+            [self.rightCollection reloadData];
+        }];
         
     }
     return self;
@@ -172,7 +180,7 @@
 #pragma mark--dcollectionView里有多少个组
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return self.categoryVM.categoryModels.count;
+    return self.categoryVM.leftRowModels.count;
    
 }
 
@@ -231,6 +239,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
     MultilevelTableViewCell * cell=(MultilevelTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
     cell.titile.textColor= self.leftSelectColor;
     cell.backgroundColor= self.leftSelectBgColor;
@@ -240,18 +249,19 @@
     line.backgroundColor= cell.backgroundColor;
     
     //处理tableView滚动
-//    [self adjustLeftTabaleViewOffset:_selectIndex];
     self.needToScorllerIndex = indexPath.row;
     
-    self.isReturnLastOffset=NO;
-    [self.rightCollection reloadData];
-    if (self.isRecordLastScroll) {
-        [self.rightCollection scrollRectToVisible:CGRectMake(0, [self.offsetScorllers[self.selectIndex] floatValue], self.rightCollection.frame.size.width, self.rightCollection.frame.size.height) animated:NO];
-    }
-    else{
-        
-         [self.rightCollection scrollRectToVisible:CGRectMake(0, 0, self.rightCollection.frame.size.width, self.rightCollection.frame.size.height) animated:NO];
-    }
+    
+//    self.isReturnLastOffset=NO;
+//
+//    if (self.isRecordLastScroll) {
+//        [self.rightCollection scrollRectToVisible:CGRectMake(0, [self.offsetScorllers[self.selectIndex] floatValue], self.rightCollection.frame.size.width, self.rightCollection.frame.size.height) animated:NO];
+//    }
+//    else{
+//
+//         [self.rightCollection scrollRectToVisible:CGRectMake(0, 0, self.rightCollection.frame.size.width, self.rightCollection.frame.size.height) animated:NO];
+//    }
+    
     
 
 }
@@ -262,48 +272,20 @@
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
     
-    if (self.categoryVM.categoryModels.count==0) {
-        return 0;
-    }
+//    if (self.categoryVM.leftRowModels.count==0) {
+//        return 0;
+//    }
+//
+//    return [self.categoryVM collectionViewForSectionNumber:self.selectIndex];//title.nextArray.count;
     
-    return [self.categoryVM collectionViewForSectionNumber:self.selectIndex];//title.nextArray.count;
+    return 1;
     
     
 }
 #pragma mark---每一组有多少个cell
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    /*
-    CategoryMeunModel * title=self.allData[self.selectIndex];
-    
-    if (title.nextArray.count>0) {
-        
-        CategoryMeunModel *sub=title.nextArray[section];
-        
-        if (sub.nextArray.count==0){//没有下一级
-            
-            return 1;
-            
-        }else{
-            
-            return sub.nextArray.count;
-        }
-        
-    }else{
-        
-        return title.nextArray.count;
-    }
-    */
-    NSInteger sectionNum = [self.categoryVM collectionViewForSectionNumber:self.selectIndex];
-    NSInteger itemNum = [self.categoryVM collectionViewForRowNumberForSection:section tableViewIndex:self.selectIndex];
-    if (sectionNum > 0) {
-        if (itemNum == 0) {
-            return 1;
-        }else{
-            return itemNum;
-        }
-    }else{
-        return sectionNum;//0
-    }
+    return self.categoryVM.rightRowModels.count;
+
 
 }
 
@@ -327,53 +309,51 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MultilevelCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:kMultilevelCollectionViewCell forIndexPath:indexPath];
-    cell.titile.text = [self.categoryVM collectionViewForTitleForRowAtIndexPath:indexPath section:indexPath.section tableViewIndex:self.selectIndex];
+    cell.backgroundColor = [UIColor lightGrayColor];
+    cell.titile.text = [self.categoryVM collectionViewForTitleForRowAtIndexPath:indexPath];
     cell.imageView.backgroundColor=[UIColor whiteColor];
-    NSString *imageName = [self.categoryVM collectionViewForImageNameForRowAtIndexPath:indexPath section:indexPath.section tableViewIndex:self.selectIndex];
-    if (imageName) {
-        cell.imageView.image= [UIImage imageNamed:imageName];
-    }
     
-   
-    //给一张默认图片，先使用默认图片，当图片加载完成后再替换
-//    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[self.categoryVM collectionViewForImageNameForRowAtIndexPath:indexPath section:indexPath.section tableViewIndex:self.selectIndex]]
-//                      placeholderImage:[UIImage imageNamed:[self.categoryVM collectionViewForImageNameForRowAtIndexPath:indexPath section:indexPath.section tableViewIndex:self.selectIndex]]];
+//    [cell.imageView sd_setImageWithURL:[self.categoryVM collectionViewForImageNameForRowAtIndexPath:indexPath] placeholderImage:[UIImage imageNamed:@"y_h_9.9元区icon"]];
+    [cell.imageView sd_setImageWithURL:[self.categoryVM collectionViewForImageNameForRowAtIndexPath:indexPath] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        NSLog(@"ImageError:%@,URL:%@",error,imageURL);
+    }];
+
     
     return cell;
 }
 
-#pragma mark---定义并返回每个headerView或footerView
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    
-    NSString *reuseIdentifier;
-    if ([kind isEqualToString: UICollectionElementKindSectionFooter ]){
-        reuseIdentifier = @"footer";
-    }else{
-        reuseIdentifier = kMultilevelCollectionHeader;
-    }
-    
-    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-
-    UILabel *label = (UILabel *)[view viewWithTag:1];
-//    label.font=[UIFont systemFontOfSize:14];
-//    label.textColor=UIColorFromRGB(0x686868);
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
-        
-        if (self.categoryVM.categoryModels[self.selectIndex].topMenu.count > 0) {
-            label.text = [self.categoryVM collectionViewForTitleForSection:indexPath.section tableViewIndex:self.selectIndex];
-        }else{
-            label.text=@"暂无";
-        }
-        
-        
-    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
-        
-        view.backgroundColor = [UIColor lightGrayColor];
-        label.text = [NSString stringWithFormat:@"这是footer:%ld",(long)indexPath.section];
-    }
-    
-    return view;
-}
+//#pragma mark---定义并返回每个headerView或footerView
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+//
+//    NSString *reuseIdentifier;
+//    if ([kind isEqualToString: UICollectionElementKindSectionFooter ]){
+//        reuseIdentifier = @"footer";
+//    }else{
+//        reuseIdentifier = kMultilevelCollectionHeader;
+//    }
+//    
+//    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+//
+//    UILabel *label = (UILabel *)[view viewWithTag:1];
+////    label.font=[UIFont systemFontOfSize:14];
+////    label.textColor=UIColorFromRGB(0x686868);
+//    if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
+//
+//        if (self.categoryVM.leftRowModels[self.selectIndex].topMenu.count > 0) {
+//            label.text = [self.categoryVM collectionViewForTitleForSection:indexPath.section tableViewIndex:self.selectIndex];
+//        }else{
+//            label.text=@"暂无";
+//        }
+//
+//
+//    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
+//
+//        view.backgroundColor = [UIColor lightGrayColor];
+//        label.text = [NSString stringWithFormat:@"这是footer:%ld",(long)indexPath.section];
+//    }
+//
+//    return view;
+//}
 
 #pragma mark---UICollectionViewDelegateFlowLayout 是UICollectionViewDelegate的子协议
 #pragma mark---每一个cell的大小
@@ -383,18 +363,18 @@
 }
 #pragma mark---设置每组的cell的边界, 具体看下图
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0, 10, 0, 10);
+    return UIEdgeInsetsMake(10, 8, 10, 8);
 }
 
 #pragma mark---cell的最小行间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     return 10.0f;
 }
-#pragma mark---
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    CGSize size={kScreenWidth,44};
-    return size;
-}
+//#pragma mark---
+//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+//    CGSize size={kScreenWidth,44};
+//    return size;
+//}
 
 
 #pragma mark---记录滑动的坐标
@@ -455,6 +435,12 @@
     if (currentCellIndex == _oldCellIndex) {
         return;
     }
+    
+    //请求右边的数据
+    [self.categoryVM getCategoryRithDataWithParameter:self.categoryVM.leftRowModels[currentCellIndex].ID completionHandler:^(NSError * _Nonnull error) {
+        [self.rightCollection reloadData];
+    }];
+    
     MultilevelTableViewCell * oldCell=(MultilevelTableViewCell*)[self.leftTablew cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_oldCellIndex inSection:0]];
     oldCell.titile.textColor = self.leftUnSelectColor;
     oldCell.backgroundColor = self.leftUnSelectBgColor;
@@ -493,6 +479,11 @@
     }
     
 }
+
+
+
+
+
 @end
 
 

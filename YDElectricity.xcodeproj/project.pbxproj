@@ -134,6 +134,8 @@
 		5452FB2A21B6786600137441 /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5452FB2121B6786500137441 /* h1.jpg */; };
 		5452FB2B21B6786600137441 /* pageControlCurrentDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5452FB2221B6786600137441 /* pageControlCurrentDot@2x.png */; };
 		5452FB2C21B6786600137441 /* pageControlCurrentDot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5452FB2321B6786600137441 /* pageControlCurrentDot@3x.png */; };
+		546DE13A21D25BAA00938B49 /* GSCustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 546DE13821D25BA900938B49 /* GSCustomNavBar.m */; };
+		546DE13B21D25BAA00938B49 /* GSExtensibleTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 546DE13921D25BA900938B49 /* GSExtensibleTableHeader.m */; };
 		5470579421ABA1C60087E4BD /* AppDelegate+System.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470579321ABA1C60087E4BD /* AppDelegate+System.m */; };
 		5470579A21ABD9DD0087E4BD /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470579921ABD9DD0087E4BD /* NSObject+AFNetworking.m */; };
 		5470579D21ABE5500087E4BD /* YDNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470579C21ABE5500087E4BD /* YDNetManager.m */; };
@@ -181,9 +183,17 @@
 		549EFBA421BF74A700461469 /* SinaWeiboConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549EFB9421BF74A700461469 /* SinaWeiboConnector.framework */; };
 		549EFBA521BF74A700461469 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549EFB9521BF74A700461469 /* ShareSDK.framework */; };
 		549EFBA621BF74A700461469 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549EFB9721BF74A700461469 /* MOBFoundation.framework */; };
+		54A03D3221D63EDB00ECC00F /* ShareProfitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A03D3121D63EDB00ECC00F /* ShareProfitTableViewController.m */; };
 		54A5046C21B7C15D00984537 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A5046B21B7C15D00984537 /* MessageUI.framework */; };
 		54A5047221B7C6A000984537 /* YDLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A5047021B7C6A000984537 /* YDLogInViewController.m */; };
 		54A5047321B7C6A000984537 /* YDLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A5047121B7C6A000984537 /* YDLogInViewController.xib */; };
+		54A5B0CC21D30FE600F3CA27 /* TaoBaoCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A5B0CB21D30FE600F3CA27 /* TaoBaoCustomerDetailViewController.m */; };
+		54A5B0D121D3151E00F3CA27 /* CustomerHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A5B0CF21D3151E00F3CA27 /* CustomerHeaderCell.m */; };
+		54A5B0D221D3151E00F3CA27 /* CustomerHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A5B0D021D3151E00F3CA27 /* CustomerHeaderCell.xib */; };
+		54A5B0D621D3155E00F3CA27 /* DetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A5B0D421D3155E00F3CA27 /* DetailInfoCell.m */; };
+		54A5B0D721D3155E00F3CA27 /* DetailInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A5B0D521D3155E00F3CA27 /* DetailInfoCell.xib */; };
+		54A5B0DB21D3158500F3CA27 /* ShopDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A5B0D921D3158500F3CA27 /* ShopDetailCell.m */; };
+		54A5B0DC21D3158500F3CA27 /* ShopDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A5B0DA21D3158500F3CA27 /* ShopDetailCell.xib */; };
 		54AD34A921AE863D004FAEF5 /* YDIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD34A821AE863D004FAEF5 /* YDIntroViewController.m */; };
 		54AD34B021AE9DF9004FAEF5 /* YDIntroSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD34AF21AE9DF9004FAEF5 /* YDIntroSectionHeaderView.m */; };
 		54AD7C5021C335F00054D34A /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD7C4F21C335F00054D34A /* CategoryModel.m */; };
@@ -192,6 +202,7 @@
 		54AF6FE921BB6E9F00E264EB /* YDBusiness.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54AF6FE821BB6E9F00E264EB /* YDBusiness.storyboard */; };
 		54AF6FEB21BB6EC300E264EB /* YDDiscover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54AF6FEA21BB6EC300E264EB /* YDDiscover.storyboard */; };
 		54AF6FEF21BB6FBE00E264EB /* YDHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54AF6FEE21BB6FBE00E264EB /* YDHome.storyboard */; };
+		54C405AE21D501F4002D679D /* UIButton+YDButtonHitRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C405AD21D501F4002D679D /* UIButton+YDButtonHitRect.m */; };
 		54C68EA321C8E734003CE99E /* PhoneNumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C68EA221C8E734003CE99E /* PhoneNumViewController.m */; };
 		54C68EA621C8E769003CE99E /* ConfirmTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C68EA521C8E769003CE99E /* ConfirmTeacherViewController.m */; };
 		54C6F02821AB87A200679607 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6F02721AB87A200679607 /* AppDelegate.m */; };
@@ -379,6 +390,10 @@
 		5452FB2121B6786500137441 /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
 		5452FB2221B6786600137441 /* pageControlCurrentDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlCurrentDot@2x.png"; sourceTree = "<group>"; };
 		5452FB2321B6786600137441 /* pageControlCurrentDot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlCurrentDot@3x.png"; sourceTree = "<group>"; };
+		546DE13621D25BA900938B49 /* GSCustomNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCustomNavBar.h; sourceTree = "<group>"; };
+		546DE13721D25BA900938B49 /* GSExtensibleTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSExtensibleTableHeader.h; sourceTree = "<group>"; };
+		546DE13821D25BA900938B49 /* GSCustomNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSCustomNavBar.m; sourceTree = "<group>"; };
+		546DE13921D25BA900938B49 /* GSExtensibleTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSExtensibleTableHeader.m; sourceTree = "<group>"; };
 		5470579121AB9F360087E4BD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5470579221ABA1C60087E4BD /* AppDelegate+System.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+System.h"; sourceTree = "<group>"; };
 		5470579321ABA1C60087E4BD /* AppDelegate+System.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+System.m"; sourceTree = "<group>"; };
@@ -457,10 +472,23 @@
 		549EFB9421BF74A700461469 /* SinaWeiboConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SinaWeiboConnector.framework; sourceTree = "<group>"; };
 		549EFB9521BF74A700461469 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		549EFB9721BF74A700461469 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		54A03D3021D63EDB00ECC00F /* ShareProfitTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareProfitTableViewController.h; sourceTree = "<group>"; };
+		54A03D3121D63EDB00ECC00F /* ShareProfitTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareProfitTableViewController.m; sourceTree = "<group>"; };
 		54A5046B21B7C15D00984537 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		54A5046F21B7C6A000984537 /* YDLogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogInViewController.h; sourceTree = "<group>"; };
 		54A5047021B7C6A000984537 /* YDLogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogInViewController.m; sourceTree = "<group>"; };
 		54A5047121B7C6A000984537 /* YDLogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YDLogInViewController.xib; sourceTree = "<group>"; };
+		54A5B0CA21D30FE600F3CA27 /* TaoBaoCustomerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaoBaoCustomerDetailViewController.h; sourceTree = "<group>"; };
+		54A5B0CB21D30FE600F3CA27 /* TaoBaoCustomerDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaoBaoCustomerDetailViewController.m; sourceTree = "<group>"; };
+		54A5B0CE21D3151E00F3CA27 /* CustomerHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerHeaderCell.h; sourceTree = "<group>"; };
+		54A5B0CF21D3151E00F3CA27 /* CustomerHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerHeaderCell.m; sourceTree = "<group>"; };
+		54A5B0D021D3151E00F3CA27 /* CustomerHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerHeaderCell.xib; sourceTree = "<group>"; };
+		54A5B0D321D3155E00F3CA27 /* DetailInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailInfoCell.h; sourceTree = "<group>"; };
+		54A5B0D421D3155E00F3CA27 /* DetailInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailInfoCell.m; sourceTree = "<group>"; };
+		54A5B0D521D3155E00F3CA27 /* DetailInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoCell.xib; sourceTree = "<group>"; };
+		54A5B0D821D3158500F3CA27 /* ShopDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDetailCell.h; sourceTree = "<group>"; };
+		54A5B0D921D3158500F3CA27 /* ShopDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDetailCell.m; sourceTree = "<group>"; };
+		54A5B0DA21D3158500F3CA27 /* ShopDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopDetailCell.xib; sourceTree = "<group>"; };
 		54A899C621CB699F00631930 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		54A899C721CB69A000631930 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		54AD34A721AE863D004FAEF5 /* YDIntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDIntroViewController.h; sourceTree = "<group>"; };
@@ -475,6 +503,8 @@
 		54AF6FE821BB6E9F00E264EB /* YDBusiness.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YDBusiness.storyboard; sourceTree = "<group>"; };
 		54AF6FEA21BB6EC300E264EB /* YDDiscover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YDDiscover.storyboard; sourceTree = "<group>"; };
 		54AF6FEE21BB6FBE00E264EB /* YDHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YDHome.storyboard; sourceTree = "<group>"; };
+		54C405AC21D501F4002D679D /* UIButton+YDButtonHitRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+YDButtonHitRect.h"; sourceTree = "<group>"; };
+		54C405AD21D501F4002D679D /* UIButton+YDButtonHitRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YDButtonHitRect.m"; sourceTree = "<group>"; };
 		54C68EA121C8E734003CE99E /* PhoneNumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneNumViewController.h; sourceTree = "<group>"; };
 		54C68EA221C8E734003CE99E /* PhoneNumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneNumViewController.m; sourceTree = "<group>"; };
 		54C68EA421C8E769003CE99E /* ConfirmTeacherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfirmTeacherViewController.h; sourceTree = "<group>"; };
@@ -670,6 +700,17 @@
 			path = PListImage;
 			sourceTree = "<group>";
 		};
+		546DE13521D25BA900938B49 /* 可拉伸头部控件 */ = {
+			isa = PBXGroup;
+			children = (
+				546DE13621D25BA900938B49 /* GSCustomNavBar.h */,
+				546DE13821D25BA900938B49 /* GSCustomNavBar.m */,
+				546DE13721D25BA900938B49 /* GSExtensibleTableHeader.h */,
+				546DE13921D25BA900938B49 /* GSExtensibleTableHeader.m */,
+			);
+			path = "可拉伸头部控件";
+			sourceTree = "<group>";
+		};
 		5470578821AB9D0D0087E4BD /* Define */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +773,8 @@
 				5472808921C0DBBF009A75E8 /* NSString+Extension.m */,
 				542108FF21C20AC000CCA43C /* UIImage+Extension.h */,
 				542108FE21C20AC000CCA43C /* UIImage+Extension.m */,
+				54C405AC21D501F4002D679D /* UIButton+YDButtonHitRect.h */,
+				54C405AD21D501F4002D679D /* UIButton+YDButtonHitRect.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -805,6 +848,8 @@
 		5472809021C0DEAE009A75E8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				54A03D1D21D5C6FB00ECC00F /* ShareProfitVC */,
+				54A5B0C621D30EFD00F3CA27 /* TaoBaoCustomerDetail */,
 				547280AB21C0E1D8009A75E8 /* Register */,
 				547280AA21C0E1D2009A75E8 /* Login */,
 				547280A121C0DF69009A75E8 /* 分类 */,
@@ -838,6 +883,9 @@
 		5472809321C0DEAE009A75E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				54A03D1C21D5C6BB00ECC00F /* ShareProfit */,
+				54A5B0CD21D314D300F3CA27 /* TaoBaoCutomer */,
+				546DE13521D25BA900938B49 /* 可拉伸头部控件 */,
 				547280B021C0FA29009A75E8 /* HomeHeaderCollectionViewCell.h */,
 				547280B121C0FA29009A75E8 /* HomeHeaderCollectionViewCell.m */,
 				547280B221C0FA29009A75E8 /* HomeHeaderCollectionViewCell.xib */,
@@ -1279,6 +1327,47 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		54A03D1C21D5C6BB00ECC00F /* ShareProfit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ShareProfit;
+			sourceTree = "<group>";
+		};
+		54A03D1D21D5C6FB00ECC00F /* ShareProfitVC */ = {
+			isa = PBXGroup;
+			children = (
+				54A03D3021D63EDB00ECC00F /* ShareProfitTableViewController.h */,
+				54A03D3121D63EDB00ECC00F /* ShareProfitTableViewController.m */,
+			);
+			name = ShareProfitVC;
+			sourceTree = "<group>";
+		};
+		54A5B0C621D30EFD00F3CA27 /* TaoBaoCustomerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				54A5B0CA21D30FE600F3CA27 /* TaoBaoCustomerDetailViewController.h */,
+				54A5B0CB21D30FE600F3CA27 /* TaoBaoCustomerDetailViewController.m */,
+			);
+			name = TaoBaoCustomerDetail;
+			sourceTree = "<group>";
+		};
+		54A5B0CD21D314D300F3CA27 /* TaoBaoCutomer */ = {
+			isa = PBXGroup;
+			children = (
+				54A5B0CE21D3151E00F3CA27 /* CustomerHeaderCell.h */,
+				54A5B0CF21D3151E00F3CA27 /* CustomerHeaderCell.m */,
+				54A5B0D021D3151E00F3CA27 /* CustomerHeaderCell.xib */,
+				54A5B0D321D3155E00F3CA27 /* DetailInfoCell.h */,
+				54A5B0D421D3155E00F3CA27 /* DetailInfoCell.m */,
+				54A5B0D521D3155E00F3CA27 /* DetailInfoCell.xib */,
+				54A5B0D821D3158500F3CA27 /* ShopDetailCell.h */,
+				54A5B0D921D3158500F3CA27 /* ShopDetailCell.m */,
+				54A5B0DA21D3158500F3CA27 /* ShopDetailCell.xib */,
+			);
+			name = TaoBaoCutomer;
+			sourceTree = "<group>";
+		};
 		54AD34AA21AE9D99004FAEF5 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1451,6 +1540,7 @@
 				544DD47221C38B6C0052D469 /* 542a6c23Nbce253e1.jpg in Resources */,
 				544DD48C21C38B6C0052D469 /* MENU_0_0_6.PNG in Resources */,
 				544DD47B21C38B6C0052D469 /* cell_03.PNG in Resources */,
+				54A5B0DC21D3158500F3CA27 /* ShopDetailCell.xib in Resources */,
 				544DD45821C38B6C0052D469 /* 542a6bc7N754c653b.jpg in Resources */,
 				549EFB9F21BF74A700461469 /* ShareSDKUI.bundle in Resources */,
 				544DD44721C38B6C0052D469 /* 542a6ba0N217a273b.jpg in Resources */,
@@ -1461,6 +1551,7 @@
 				544DD46A21C38B6C0052D469 /* 542a6ab5N850a3b1f.jpg in Resources */,
 				544DD46C21C38B6C0052D469 /* 544dfecaN1dcf17ef.jpg in Resources */,
 				544DD46B21C38B6C0052D469 /* 542a6c32Nc4df0f0e.jpg in Resources */,
+				54A5B0D221D3151E00F3CA27 /* CustomerHeaderCell.xib in Resources */,
 				544DD45A21C38B6C0052D469 /* h2.jpg in Resources */,
 				54A5047321B7C6A000984537 /* YDLogInViewController.xib in Resources */,
 				544DD45E21C38B6C0052D469 /* 544dfedfNbfc0f1de.jpg in Resources */,
@@ -1507,6 +1598,7 @@
 				544DD45021C38B6C0052D469 /* MENU_0_0_0.PNG in Resources */,
 				544DD48221C38B6C0052D469 /* MENU_0_0_8.PNG in Resources */,
 				5421091921C20FBF00CCA43C /* CommodityTableViewCell.xib in Resources */,
+				54A5B0D721D3155E00F3CA27 /* DetailInfoCell.xib in Resources */,
 				5452FB2921B6786600137441 /* h2.jpg in Resources */,
 				5452FB2821B6786600137441 /* pageControlDot@3x.png in Resources */,
 				544DD44C21C38B6C0052D469 /* 542a6bacNfae97760.jpg in Resources */,
@@ -1589,12 +1681,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A5B0D621D3155E00F3CA27 /* DetailInfoCell.m in Sources */,
 				54F1FA9221AF7314004460D0 /* YDIntroHeaderCell.m in Sources */,
 				54F1FB6921AFD5C1004460D0 /* TestViewController.m in Sources */,
 				5442871121CC78E80022C5EA /* InHomeHeaderCell.m in Sources */,
 				5440BAF221ACD7E50015C8F7 /* MJStudent.m in Sources */,
 				542F8DBA21C8991800371620 /* CategoryRightMenuModel.m in Sources */,
 				544DD4A821C3C9C70052D469 /* IdentityCell.m in Sources */,
+				54A5B0D121D3151E00F3CA27 /* CustomerHeaderCell.m in Sources */,
+				546DE13A21D25BAA00938B49 /* GSCustomNavBar.m in Sources */,
 				54A5047221B7C6A000984537 /* YDLogInViewController.m in Sources */,
 				54CF9A0D21BA423800E9142F /* leftTagModel.m in Sources */,
 				5421092321C210D800CCA43C /* CommodityTableViewController.m in Sources */,
@@ -1602,6 +1697,7 @@
 				54C68EA621C8E769003CE99E /* ConfirmTeacherViewController.m in Sources */,
 				5421092021C20FBF00CCA43C /* CollectionHeader.m in Sources */,
 				542C5E3721C9F4A300EA0003 /* HomeGoodModel.m in Sources */,
+				54A5B0DB21D3158500F3CA27 /* ShopDetailCell.m in Sources */,
 				549A663421B8D3340059EE89 /* PPBadgeLabel.m in Sources */,
 				542108F821C1E96500CCA43C /* HomeProductCell.m in Sources */,
 				54AD34A921AE863D004FAEF5 /* YDIntroViewController.m in Sources */,
@@ -1644,6 +1740,8 @@
 				549A663521B8D3340059EE89 /* UITabBarItem+PPBadgeView.m in Sources */,
 				54CF9A2421BA66C800E9142F /* YDVSegmentView.m in Sources */,
 				54F1FA9621AF8C4D004460D0 /* TestModel.m in Sources */,
+				546DE13B21D25BAA00938B49 /* GSExtensibleTableHeader.m in Sources */,
+				54A5B0CC21D30FE600F3CA27 /* TaoBaoCustomerDetailViewController.m in Sources */,
 				549A663A21B90A0B0059EE89 /* Person.m in Sources */,
 				54C6F03621AB87B200679607 /* main.m in Sources */,
 				54AD7C5321C33BEC0054D34A /* CategoryViewModel.m in Sources */,
@@ -1661,10 +1759,12 @@
 				542F8DB721C8891100371620 /* CategoryLeftViewModel.m in Sources */,
 				5472808821C0D756009A75E8 /* UIView+Extension.m in Sources */,
 				544DD49221C3BB7F0052D469 /* BusinessTableViewController.m in Sources */,
+				54A03D3221D63EDB00ECC00F /* ShareProfitTableViewController.m in Sources */,
 				5440BAF521ACD8070015C8F7 /* MJBag.m in Sources */,
 				540A04FB21C881B500F31712 /* CategoryLeftMenuModel.m in Sources */,
 				54AD34B021AE9DF9004FAEF5 /* YDIntroSectionHeaderView.m in Sources */,
 				544DD49E21C3C7450052D469 /* IdentityTopReusableView.m in Sources */,
+				54C405AE21D501F4002D679D /* UIButton+YDButtonHitRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

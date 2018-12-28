@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionV;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIView *imageViewParentV;
+
 @property (strong,nonatomic) HomeViewModel *homeVM;
 @property (strong,nonatomic) NSArray<NSString *> *imageURLs;
 

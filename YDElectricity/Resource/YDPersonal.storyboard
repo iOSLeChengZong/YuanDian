@@ -282,12 +282,13 @@
             </objects>
             <point key="canvasLocation" x="1234" y="654"/>
         </scene>
-        <!--个人-->
+        <!--我的-->
         <scene sceneID="yue-au-Kd1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LiD-yI-uDj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="个人" id="Dpr-cP-F17"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="y_h_bottom-Personal0" selectedImage="y_h_bottom-Personal0" id="oAe-hB-3D6"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ey-Og-vc7">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -305,5 +306,6 @@
         <image name="outer_layerImage" width="1242" height="2208"/>
         <image name="sns_icon_1.png" width="58" height="58"/>
         <image name="sns_icon_37.png" width="58" height="58"/>
+        <image name="y_h_bottom-Personal0" width="20" height="16"/>
     </resources>
 </document>

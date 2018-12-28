@@ -18,4 +18,7 @@
 @property (nonatomic, assign) CGFloat centerY;
 
 - (void) distributeSpacingVerticallyWith:(NSArray*)views;
+
+-(void) viewcornerRadius:(CGFloat)radius borderWith:(CGFloat)width clearColor:(BOOL)isClear;
+
 @end

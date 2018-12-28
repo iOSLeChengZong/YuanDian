@@ -22,6 +22,7 @@
 
 @interface HomeHeaderCollectionViewCell()
 @property(strong,nonatomic)NSArray *titleArray;
+@property(strong,nonatomic)NSArray *imageNames;
 
 
 @end
@@ -34,6 +35,9 @@
     self.imageURLs = [self.homeVM advertiseURLS];
     
     //设置秒杀商品
+    //设置秒杀商品圆角
+    [self.imageViewParentV viewcornerRadius:5 borderWith:0.01 clearColor:YES];
+    
     [self.imageView sd_setImageWithURL:[self.homeVM secondSkillGoodURL] placeholderImage:[UIImage imageNamed:@"h1"]];
     
     [self.collectionV reloadData];
@@ -48,6 +52,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 //    [self addChildViewToScrollV];
+    self.imageNames = @[@"y_h_9.9元区icon",@"y_h_限时特卖",@"y_h_精选特品",@"y_h_加盟精品",@"y_h_金币商城"];
     self.collectionV.delegate = self;
     self.collectionV.dataSource = self;
     self.cycleScrollView.delegate = self;
@@ -192,29 +197,32 @@
     return self.homeVM.culomnitemNum;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     InHomeHeaderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kInHomeHeaderCell forIndexPath:indexPath];
     cell.culomnTitle.text = [self.homeVM culomnCellTitleForItem:indexPath];
-    [cell.culomnImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"sns_icon_24"]];
+    
+    //设置culomnImage圆角状态
+    [cell viewcornerRadius:10 borderWith:0.01 clearColor:YES];
+    cell.culomnImage.image = [UIImage imageNamed:self.imageNames[indexPath.row]];
     
     return cell;
 }
 
 #pragma mark -- UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(kWidth*65, self.collectionV.bounds.size.height);
+    return CGSizeMake(kWidthScall*42.0, 61);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return ((kScreenW - (kWidth * 65.0 * 5))/5);
+    return ((self.bounds.size.width - (kWidthScall * 42.0 * 5))/5);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     return 0;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0, ((kScreenW - (kWidth * 65.0 * 5))/5)/2, 0, ((kScreenW - (kWidth * 65.0 * 5))/5)/2);
+    return UIEdgeInsetsMake(self.bounds.size.height/2, ((self.bounds.size.width - (kWidthScall * 42.0 * 5))/5)/2, self.bounds.size.height/2, ((self.bounds.size.width - (kWidthScall * 42.0 * 5))/5)/2);
 }
 
 
@@ -243,7 +251,7 @@
 //向轮播图中添加子视图
 -(void)addChildViewToScrollV{
     
-    CGFloat letEdge = ((kScreenW - (kWidth * 65.0 * 5))/5) / 2;
+    CGFloat letEdge = ((kScreenW - (kWidthScall * 65.0 * 5))/5) / 2;
     NSLog(@"seeDDDD:%f",letEdge);
     
     for (int i = 0; i < self.titleArray.count; ++i) {
@@ -257,7 +265,7 @@
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
         button.titleLabel.font = [UIFont systemFontOfSize:10];//[UIFont fontWithName:@"" size:15];//[UIFont systemFontOfSize:15];
-        button.frame = CGRectMake(letEdge  + (kWidth * 65 + 2*letEdge) * i, 5, kWidth*65, 50);
+        button.frame = CGRectMake(letEdge  + (kWidthScall * 65 + 2*letEdge) * i, 5, kWidthScall*65, 50);
         
         
         //设置按钮的尺寸为背景图尺寸 + 文字大小n尺寸
@@ -265,7 +273,7 @@
 //        button.height = button.currentImage.size.height+[title sizeWithFont:button.titleLabel.font maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)].height;
         [button setContentVerticalAlignment:UIControlContentVerticalAlignmentBottom];
         //设置title在button上的位置(top left buttom right)
-        button.titleEdgeInsets = UIEdgeInsetsMake(0, -kWidth*65, 0, 0);
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, -kWidthScall*65, 0, 0);
         
         //监听按钮点击
         

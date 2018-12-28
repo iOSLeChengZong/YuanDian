@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSString *name;
 //id -> ID
 @property(nonatomic,strong) NSString *ID;
+//商品图片
+@property(nonatomic,strong) NSString *img;
 
 
 @end

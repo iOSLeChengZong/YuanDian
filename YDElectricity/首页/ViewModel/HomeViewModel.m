@@ -142,31 +142,31 @@
 
 //原价
 -(NSString *)goodCollectionVItemSoursePriceAtIndexPath:(NSIndexPath *)indexPath{
-    return [NSString stringWithFormat:@"%f.2",_pageList[indexPath.row].reservePrice];
+    return [NSString stringWithFormat:@"￥%.1f",_pageList[indexPath.row].reservePrice];
 }
 
 
 //券
 -(NSString *)goodCollectionVitemTicketPriceAtIndexPath:(NSIndexPath *)indexPath{
-    return [NSString stringWithFormat:@"%f.1",_pageList[indexPath.row].couponPrice];
+    return [NSString stringWithFormat:@"￥%.1f",_pageList[indexPath.row].couponPrice];
 }
 
 //月销售
--(NSInteger)goodCollectionVItemMonthSaleNumAtIndexPath:(NSIndexPath *)indexPath{
+-(NSString *)goodCollectionVItemMonthSaleNumAtIndexPath:(NSIndexPath *)indexPath{
     
-     return _pageList[indexPath.row].volume;
+    return [NSString stringWithFormat:@"%ld",(long)_pageList[indexPath.row].volume];
 }
 
 //券后价
 -(NSString *)goodCollectionVItemAfterSalePriceAtIndexPath:(NSIndexPath *)indexPath{
 
-    return [NSString stringWithFormat:@"%f.1",_pageList[indexPath.row].zkFinalPrice];
+    return [NSString stringWithFormat:@"￥%.1f",_pageList[indexPath.row].zkFinalPrice];
 }
 
 
 //收益
 -(NSString *)goodCollectionVItemProfitAtIndexPath:(NSIndexPath *)indexPath{
-    return [NSString stringWithFormat:@"%f.1",_pageList[indexPath.row].commission];
+    return [NSString stringWithFormat:@"￥%.1f",_pageList[indexPath.row].commission];
 }
 
 -(void)getHomeHeaderModelDataCompletionHandler:(void (^)(NSError * _Nonnull))completionHandler{
@@ -195,8 +195,6 @@
                 [self.pageList removeAllObjects];
             }
             [self.pageList addObjectsFromArray:model.pageList];
-            PageList *pl = model.pageList[0];
-            NSLog(@"picURL:%@",pl.pictUrl);
             completionHandler(error);
         }
     }];

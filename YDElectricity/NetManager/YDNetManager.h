@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)getCategoryRightDataWithPath:(NSString *)path parameter:(NSString *)parameter completionHandler:(void(^)(CategoryRightMenuModel *model,NSError *error))completionHandler;
 
 
+//test
++ (id)getShopInfoWithPath:(NSString *)path param:(NSString *)params completionHandler:(void(^)(id model,NSError *error))completionHandler;
+
 
 
 @end

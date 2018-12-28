@@ -43,9 +43,7 @@
 //        NSLog(@"GoodListresponObj:%@",model);
 //    }];
     
-//    [YDNetManager getCategoryLeftDataWithPath:kCategoryLeftDataURL parameter:@"1111" completionHandler:^(id  _Nonnull mode, NSError * _Nonnull error) {
-//        NSLog(@"CateLeftresponObj:%@",mode);
-//    }];
+
     
 //    [YDNetManager getCategortyLeftDataWithPath:kCategoryModelURL completionHandler:^(CategoryLeftMenuModel * _Nonnull model, NSError * _Nonnull error) {
 //        NSLog(@"=====%@",model.categoryModels[0].ID);
@@ -53,6 +51,38 @@
 //
 //        }];
 //
+//    }];
+    
+    
+    //请求分类左边数据
+//    [YDNetManager getCategortyLeftDataWithPath:kCategoryModelURL completionHandler:^(CategoryLeftMenuModel * _Nonnull model, NSError * _Nonnull error) {
+//        NSLog(@"====");
+//    }];
+    
+    
+    
+    
+
+    
+    //@"https://acs.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?data={%22itemNumId%22%3A%22549893090068%22}"
+    
+    
+    [YDNetManager getShopInfoWithPath:@"/h5/mtop.taobao.detail.getdetail/6.0/" param:@"{%22itemNumId%22%3A%22549893090068%22}" completionHandler:^(id  _Nonnull model, NSError * _Nonnull error) {
+        NSLog(@"====");
+    }];
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    //请求分类右边数据
+//    [YDNetManager getCategoryRightDataWithPath:kCategoryModelURL parameter:@"37" completionHandler:^(CategoryRightMenuModel * _Nonnull model, NSError * _Nonnull error) {
+//        
 //    }];
     
     //调试首页头部数据

@@ -191,4 +191,14 @@
         make.bottom.equalTo(ws.mas_bottom);
     }];
 }
+
+-(void)viewcornerRadius:(CGFloat)radius borderWith:(CGFloat)width clearColor:(BOOL)isClear{
+    self.layer.cornerRadius = radius;
+    self.layer.borderWidth = width;
+    self.layer.masksToBounds = YES;
+    if (isClear) {
+       self.layer.backgroundColor = [UIColor clearColor].CGColor;
+    }
+    
+}
 @end

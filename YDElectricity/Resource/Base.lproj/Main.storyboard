@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3BA-71-NLD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3BA-71-NLD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,16 +13,19 @@
         <scene sceneID="Rn5-bE-bnq">
             <objects>
                 <viewController id="TmB-if-Na6" customClass="menuTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DSV-YY-D70"/>
+                        <viewControllerLayoutGuide type="bottom" id="rhg-oT-rTT"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Znh-sV-EB8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="9XJ-A5-RBW"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa5-te-r48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3250" y="1263"/>
+            <point key="canvasLocation" x="-2462" y="56"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="i81-Rl-pXR">
@@ -43,50 +45,54 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4a-GP-7wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-809" y="-130"/>
+            <point key="canvasLocation" x="-1826" y="602"/>
         </scene>
         <!--YDPersonal-->
         <scene sceneID="5uD-Z1-vMX">
             <objects>
                 <viewControllerPlaceholder storyboardName="YDPersonal" id="dpB-W2-lfb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="p6F-e9-eNA"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="y_h_bottom-Personal0" selectedImage="y_h_bottom-Personal0" id="p6F-e9-eNA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKb-wA-QPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86" y="165"/>
+            <point key="canvasLocation" x="-1050" y="750"/>
         </scene>
         <!--YDBusiness-->
         <scene sceneID="3qz-2H-wbz">
             <objects>
                 <viewControllerPlaceholder storyboardName="YDBusiness" id="qei-L1-fWZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="m6x-Zr-nL3"/>
+                    <tabBarItem key="tabBarItem" title="创业" image="y_h_bottom-Business0" selectedImage="y_h_bottom-Business0" id="m6x-Zr-nL3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S9-4a-O4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="14"/>
+            <point key="canvasLocation" x="-1051" y="601"/>
         </scene>
         <!--YDDiscover-->
         <scene sceneID="csL-HD-mDM">
             <objects>
                 <viewControllerPlaceholder storyboardName="YDDiscover" id="7yA-a3-87b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mXN-vX-lgd"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="y_h_bottom-found0" selectedImage="y_h_bottom-found0" id="mXN-vX-lgd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJz-fY-nZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86" y="-199"/>
+            <point key="canvasLocation" x="-1050" y="461"/>
         </scene>
         <!--YDHome-->
         <scene sceneID="c5Q-7F-JhY">
             <objects>
                 <viewControllerPlaceholder storyboardName="YDHome" id="q2Y-P1-hNC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RW7-X4-FUX"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="y_h_bottom-icon1" selectedImage="y_h_bottom-icon1" id="RW7-X4-FUX"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0B-Ic-u12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="-461"/>
+            <point key="canvasLocation" x="-1065" y="380"/>
         </scene>
     </scenes>
     <resources>
         <image name="OM" width="16" height="16"/>
+        <image name="y_h_bottom-Business0" width="21" height="21"/>
+        <image name="y_h_bottom-Personal0" width="20" height="16"/>
+        <image name="y_h_bottom-found0" width="21" height="21"/>
+        <image name="y_h_bottom-icon1" width="21" height="21"/>
     </resources>
 </document>

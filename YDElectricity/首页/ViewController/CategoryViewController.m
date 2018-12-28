@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "CommodityTableViewController.h"
 #import "CategoryViewModel.h"
+#import "Factory.h"
 
 @interface CategoryViewController ()<SearchBarViewDelegate>
 {
@@ -31,23 +32,21 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //获取数据
+    [self.view showBusyHUD];
+    [self.categoryVM getCategoryLeftData:^(NSError * _Nonnull error) {
+        [self.view hideBusyHUD];
+        [self initCategoryMenu];
+        
+    }];
+    
     //设置背景颜色
     self.view.backgroundColor = [UIColor whiteColor];
     //设置导航栏
     [self setupNavigationItem];
-    //初始化数据
-//    [self initData];
+
     
-    [self.categoryVM getCategoryDataCompletionHandler:^(NSError * _Nonnull error) {
-        if (error) {
-            NSLog(@"error:%@",error);
-        }else{
-            NSLog(@"没有错误");
-            //初始化分类菜单
-            [self initCategoryMenu];
-        }
-        
-    }];
+
     
    
     
@@ -62,9 +61,15 @@
     
 //    self.navigationItem.rightBarButtonItem = [UIBarButtonItem BarButtonItemWithBackgrounImageName:@"" highBackgroundImageName:nil target:self aciton:nil];
     //将搜索条放在一个UIView上
-    SearchBarView *searchView = [[SearchBarView alloc]initWithFrame:CGRectMake(0, 7, self.view.frame.size.width-60 , 30)];
-    searchView.delegate=self;
-     self.navigationItem.titleView = searchView;
+//    SearchBarView *searchView = [[SearchBarView alloc]initWithFrame:CGRectMake(0, 7, self.view.frame.size.width-60 , 30)];
+//    searchView.delegate=self;
+    //     self.navigationItem.titleView = searchView;
+    
+    [Factory addSearchItemToVC:self clickHandler:^{
+        NSLog(@"搜索被点击了");
+    }];
+    
+
 }
 
 - (void)cameraClick{

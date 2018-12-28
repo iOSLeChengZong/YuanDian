@@ -9,42 +9,73 @@
 #import "CategoryViewModel.h"
 
 @implementation CategoryViewModel
+
+
+
 //左侧tableView
 -(NSInteger)rowNumber{
-    return self.categoryModels.count;
+    return self.leftRowModels.count;
 }
 
 -(NSString *)tableViewFroTitleForRowForTableViewAtIndexPath:(NSIndexPath *)indexPath{
-    return self.categoryModels[indexPath.row].menuName;
+    return self.leftRowModels[indexPath.row].name;
 }
 
 //右侧collectionView
 -(NSInteger)collectionViewForSectionNumber:(NSInteger)tableVIndex{
-    return self.categoryModels[tableVIndex].topMenu.count;
+    return 1;//
 }
 
--(NSInteger)collectionViewForRowNumberForSection:(NSInteger)section tableViewIndex:(NSInteger)index{
-    return self.categoryModels[index].topMenu[section].typeMenu.count;
-}
-
--(NSString *)collectionViewForTitleForSection:(NSInteger)section tableViewIndex:(NSInteger)index{
-    return  self.categoryModels[index].topMenu[section].topName;
+-(NSInteger)collectionViewForRowNumberForSection:(NSInteger)section /*tableViewIndex:(NSInteger)index*/{
+    return self.rightRowModels.count;
 }
 
 
--(NSString *)collectionViewForTitleForRowAtIndexPath:(NSIndexPath *)indexPath section:(NSInteger)section tableViewIndex:(NSInteger)index{
-    return self.categoryModels[index].topMenu[section].typeMenu[indexPath.row].typeName;
-}
 
--(NSString *)collectionViewForImageNameForRowAtIndexPath:(NSIndexPath *)indexPath section:(NSInteger)section tableViewIndex:(NSInteger)index{
-    return self.categoryModels[index].topMenu[section].typeMenu[indexPath.row].typeImg;
+-(NSString *)collectionViewForTitleForSection:(NSInteger)section /*tableViewIndex:(NSInteger)index*/{
+    return  @" ";
 }
 
 
--(void)getCategoryDataCompletionHandler:(void (^)(NSError * _Nonnull))completionHandler{
-    [PlistDataManager getCategoryData:^(NSArray<CategoryModel *> *categoryData, NSError * _Nonnull error) {
-        self.categoryModels = categoryData;
-        completionHandler(error);
+-(NSString *)collectionViewForTitleForRowAtIndexPath:(NSIndexPath *)indexPath/* section:(NSInteger)section tableViewIndex:(NSInteger)index*/{
+    return self.rightRowModels[indexPath.row].name;
+}
+
+-(NSURL *)collectionViewForImageNameForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"imageUrl:%@",[kBaseURL stringByAppendingString:self.rightRowModels[indexPath.row].img]);
+    return [NSURL URLWithString:[kBaseURL stringByAppendingString:self.rightRowModels[indexPath.row].img]];
+
+}
+
+
+//-(void)getCategoryDataCompletionHandler:(void (^)(NSError * _Nonnull))completionHandler{
+//    [PlistDataManager getCategoryData:^(NSArray<CategoryModel *> *categoryData, NSError * _Nonnull error) {
+//        self.categoryModels = categoryData;
+//        completionHandler(error);
+//    }];
+//}
+
+-(void)getCategoryLeftData:(void (^)(NSError * _Nonnull))completionHandler{
+    [YDNetManager getCategortyLeftDataWithPath:kCategoryModelURL completionHandler:^(CategoryLeftMenuModel * _Nonnull model, NSError * _Nonnull error) {
+        if (!error) {
+            self.leftRowModels = model.categoryModels;
+            completionHandler(error);
+        }
     }];
 }
+
+-(void)getCategoryRithDataWithParameter:(NSString *)ID completionHandler:(void (^)(NSError * _Nonnull))completionHandler{
+
+    [YDNetManager getCategoryRightDataWithPath:kCategoryModelURL parameter:ID completionHandler:^(CategoryRightMenuModel * _Nonnull model, NSError * _Nonnull error) {
+        if (!error) {
+            self.rightRowModels = model.categoryModels;
+            completionHandler(error);
+        }
+    }];
+    
+}
+
+
+
 @end
+

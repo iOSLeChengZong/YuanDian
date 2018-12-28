@@ -42,9 +42,13 @@
 -(void)setUpBtnClor:(id)sender{
     for (UIButton *btn in _buttonArr) {
         if ([(UIButton*)sender isEqual:btn]) {
-            [btn setBackgroundColor:kRGBA(44, 248, 152, 1.0)];
+//            [btn setBackgroundColor:kRGBA(44, 248, 152, 1.0)];
+//            [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+            btn.titleLabel.textColor = [UIColor redColor];
         }else{
-            [btn setBackgroundColor:[UIColor whiteColor]];
+//            [btn setBackgroundColor:[UIColor whiteColor]];
+//            [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+            btn.titleLabel.textColor = [UIColor darkGrayColor];
         }
     }
 }

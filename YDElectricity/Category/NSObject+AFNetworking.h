@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //GET请求
 + (id)GET:(NSString *)path parameters:(id)parmeters progress:(void(^)(NSProgress *downloadProgress))downloadProgress completionHandler:(void(^)(id responseObj,NSError *error))completionHandler;
+
+//GET请求 allPath
++ (id)GETAllPath:(NSString *)path parameters:(id)parmeters progress:(void(^)(NSProgress *downloadProgress))downloadProgress completionHandler:(void(^)(id responseObj,NSError *error))completionHandler;
+
 //POST请求
 + (id)POST:(NSString *)path parameters:(id)paremeters progress:(void(^)(NSProgress *downloadProgress))downloadProgress completionHandler:(void(^)(id responseObj,NSError *error))completionHandler;
 

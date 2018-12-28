@@ -45,11 +45,13 @@
 
 
 +(id)getHomeGoodListDataWithPath:(NSString *)path pageNum:(NSInteger)page goodNum:(NSInteger)goodNum state:(NSInteger)state completionHandler:(void (^)(HomeGoodModel * _Nonnull, NSError * _Nonnull))completionHandler{
-    NSMutableArray *params = [NSMutableArray new];
-    [params setValue:[NSNumber numberWithInteger:page] forKey:@"pageNo"];
-    [params setValue:[NSNumber numberWithInteger:goodNum] forKey:@"pageSize"];
-    [params setValue:[NSNumber numberWithInteger:state] forKey:@"state"];
-    return [self POST:path parameters:params progress:nil completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+    
+    NSMutableDictionary *parmas = [NSMutableDictionary new];
+    [parmas setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"pageNo"];
+    [parmas setObject:[NSString stringWithFormat:@"%ld",goodNum] forKey:@"pageSize"];
+    [parmas setObject:[NSString stringWithFormat:@"%ld",state] forKey:@"state"];
+    
+    return [self POST:path parameters:parmas progress:nil completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
         if (!error) {
             !completionHandler ?: completionHandler([HomeGoodModel parse:responseObj],error);
 //            HomeGoodModel *hm = [HomeGoodModel parse:responseObj];
@@ -81,4 +83,26 @@
     }];
 }
 
+
+
+//test
++(id)getShopInfoWithPath:(NSString *)path param:(NSString *)params completionHandler:(void (^)(id _Nonnull, NSError * _Nonnull))completionHandler{
+    NSMutableDictionary *pa = [NSMutableDictionary new];
+    [pa setObject:params forKey:@"data"];
+    
+    return [self GETAllPath:path parameters:pa progress:nil completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+        if (!error) {
+            NSLog(@"model:%@",responseObj);
+            if (responseObj != nil) {
+                completionHandler(responseObj,error);
+            }else{
+                NSLog(@"数据为空!!!!!!!!!!!!!!");
+            }
+            
+        }else{
+            NSLog(@"?????????");
+        }
+    }];
+ 
+}
 @end

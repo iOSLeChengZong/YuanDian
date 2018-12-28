@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CategoryViewModel.h"
 
-#define kLeftWidth 100
+#define kLeftWidth 89
 
 @interface MultilevelMenu : UIView<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate>
 
