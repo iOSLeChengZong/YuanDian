@@ -148,6 +148,8 @@
 		547280B421C0FA29009A75E8 /* HomeHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547280B221C0FA29009A75E8 /* HomeHeaderCollectionViewCell.xib */; };
 		547280B821C11313009A75E8 /* HomeSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 547280B621C11313009A75E8 /* HomeSectionHeaderView.m */; };
 		547280B921C11313009A75E8 /* HomeSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547280B721C11313009A75E8 /* HomeSectionHeaderView.xib */; };
+		5483743821D7685B00FC926E /* PersonalNoneLogonHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5483743621D7685A00FC926E /* PersonalNoneLogonHeader.m */; };
+		5483743921D7685B00FC926E /* PersonalNoneLogonHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5483743721D7685A00FC926E /* PersonalNoneLogonHeader.xib */; };
 		5493523A21AD2D1800192823 /* NSObject+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5493523921AD2D1800192823 /* NSObject+ViewModel.m */; };
 		5499FD1C21B77A22000FE212 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5499FD1B21B77A22000FE212 /* libicucore.tbd */; };
 		5499FD1E21B77A33000FE212 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5499FD1D21B77A33000FE212 /* libz.tbd */; };
@@ -194,6 +196,19 @@
 		54A5B0D721D3155E00F3CA27 /* DetailInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A5B0D521D3155E00F3CA27 /* DetailInfoCell.xib */; };
 		54A5B0DB21D3158500F3CA27 /* ShopDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A5B0D921D3158500F3CA27 /* ShopDetailCell.m */; };
 		54A5B0DC21D3158500F3CA27 /* ShopDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A5B0DA21D3158500F3CA27 /* ShopDetailCell.xib */; };
+		54AB39B721D85E1900D40606 /* PersonalLogonHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39B521D85E1900D40606 /* PersonalLogonHeader.m */; };
+		54AB39B821D85E1900D40606 /* PersonalLogonHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54AB39B621D85E1900D40606 /* PersonalLogonHeader.xib */; };
+		54AB39BF21D86B6200D40606 /* PersonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39BD21D86B6200D40606 /* PersonCollectionViewCell.m */; };
+		54AB39C021D86B6200D40606 /* PersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54AB39BE21D86B6200D40606 /* PersonCollectionViewCell.xib */; };
+		54AB39C321D86E7200D40606 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39C221D86E7200D40606 /* PersonalViewController.m */; };
+		54AB39C921D89B7C00D40606 /* MyGoldReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39C721D89B7C00D40606 /* MyGoldReusableView.m */; };
+		54AB39CA21D89B7C00D40606 /* MyGoldReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54AB39C821D89B7C00D40606 /* MyGoldReusableView.xib */; };
+		54AB39CE21D89BB100D40606 /* GoldTaskCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39CC21D89BB100D40606 /* GoldTaskCollectionViewCell.m */; };
+		54AB39CF21D89BB100D40606 /* GoldTaskCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54AB39CD21D89BB100D40606 /* GoldTaskCollectionViewCell.xib */; };
+		54AB39D221D8A85600D40606 /* MyGoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39D121D8A85600D40606 /* MyGoldViewController.m */; };
+		54AB39D721D8B9D600D40606 /* TeacherNoneWelfareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39D521D8B9D600D40606 /* TeacherNoneWelfareCell.m */; };
+		54AB39D821D8B9D600D40606 /* TeacherNoneWelfareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54AB39D621D8B9D600D40606 /* TeacherNoneWelfareCell.xib */; };
+		54AB39DB21D8BC3E00D40606 /* MyTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB39DA21D8BC3E00D40606 /* MyTeacherViewController.m */; };
 		54AD34A921AE863D004FAEF5 /* YDIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD34A821AE863D004FAEF5 /* YDIntroViewController.m */; };
 		54AD34B021AE9DF9004FAEF5 /* YDIntroSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD34AF21AE9DF9004FAEF5 /* YDIntroSectionHeaderView.m */; };
 		54AD7C5021C335F00054D34A /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD7C4F21C335F00054D34A /* CategoryModel.m */; };
@@ -419,6 +434,9 @@
 		547280B521C11313009A75E8 /* HomeSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSectionHeaderView.h; sourceTree = "<group>"; };
 		547280B621C11313009A75E8 /* HomeSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSectionHeaderView.m; sourceTree = "<group>"; };
 		547280B721C11313009A75E8 /* HomeSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSectionHeaderView.xib; sourceTree = "<group>"; };
+		5483743521D7685A00FC926E /* PersonalNoneLogonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalNoneLogonHeader.h; sourceTree = "<group>"; };
+		5483743621D7685A00FC926E /* PersonalNoneLogonHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalNoneLogonHeader.m; sourceTree = "<group>"; };
+		5483743721D7685A00FC926E /* PersonalNoneLogonHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalNoneLogonHeader.xib; sourceTree = "<group>"; };
 		5493523821AD2D1800192823 /* NSObject+ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewModel.h"; sourceTree = "<group>"; };
 		5493523921AD2D1800192823 /* NSObject+ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ViewModel.m"; sourceTree = "<group>"; };
 		5499FD1B21B77A22000FE212 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -491,6 +509,28 @@
 		54A5B0DA21D3158500F3CA27 /* ShopDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopDetailCell.xib; sourceTree = "<group>"; };
 		54A899C621CB699F00631930 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		54A899C721CB69A000631930 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		54AB39B421D85E1900D40606 /* PersonalLogonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalLogonHeader.h; sourceTree = "<group>"; };
+		54AB39B521D85E1900D40606 /* PersonalLogonHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalLogonHeader.m; sourceTree = "<group>"; };
+		54AB39B621D85E1900D40606 /* PersonalLogonHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalLogonHeader.xib; sourceTree = "<group>"; };
+		54AB39BC21D86B6200D40606 /* PersonCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonCollectionViewCell.h; sourceTree = "<group>"; };
+		54AB39BD21D86B6200D40606 /* PersonCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonCollectionViewCell.m; sourceTree = "<group>"; };
+		54AB39BE21D86B6200D40606 /* PersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCollectionViewCell.xib; sourceTree = "<group>"; };
+		54AB39C121D86E7200D40606 /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		54AB39C221D86E7200D40606 /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		54AB39C621D89B7C00D40606 /* MyGoldReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGoldReusableView.h; sourceTree = "<group>"; };
+		54AB39C721D89B7C00D40606 /* MyGoldReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGoldReusableView.m; sourceTree = "<group>"; };
+		54AB39C821D89B7C00D40606 /* MyGoldReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyGoldReusableView.xib; sourceTree = "<group>"; };
+		54AB39CB21D89BB100D40606 /* GoldTaskCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoldTaskCollectionViewCell.h; sourceTree = "<group>"; };
+		54AB39CC21D89BB100D40606 /* GoldTaskCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoldTaskCollectionViewCell.m; sourceTree = "<group>"; };
+		54AB39CD21D89BB100D40606 /* GoldTaskCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoldTaskCollectionViewCell.xib; sourceTree = "<group>"; };
+		54AB39D021D8A85600D40606 /* MyGoldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGoldViewController.h; sourceTree = "<group>"; };
+		54AB39D121D8A85600D40606 /* MyGoldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGoldViewController.m; sourceTree = "<group>"; };
+		54AB39D421D8B9D600D40606 /* TeacherNoneWelfareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeacherNoneWelfareCell.h; sourceTree = "<group>"; };
+		54AB39D521D8B9D600D40606 /* TeacherNoneWelfareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeacherNoneWelfareCell.m; sourceTree = "<group>"; };
+		54AB39D621D8B9D600D40606 /* TeacherNoneWelfareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherNoneWelfareCell.xib; sourceTree = "<group>"; };
+		54AB39D921D8BC3E00D40606 /* MyTeacherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTeacherViewController.h; sourceTree = "<group>"; };
+		54AB39DA21D8BC3E00D40606 /* MyTeacherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTeacherViewController.m; sourceTree = "<group>"; };
+		54AB39DC21D8C76500D40606 /* YDSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDSingleton.h; sourceTree = "<group>"; };
 		54AD34A721AE863D004FAEF5 /* YDIntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDIntroViewController.h; sourceTree = "<group>"; };
 		54AD34A821AE863D004FAEF5 /* YDIntroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDIntroViewController.m; sourceTree = "<group>"; };
 		54AD34AE21AE9DF9004FAEF5 /* YDIntroSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDIntroSectionHeaderView.h; sourceTree = "<group>"; };
@@ -983,6 +1023,12 @@
 				54F1FB6621AFD5C1004460D0 /* TestViewController.h */,
 				54F1FB6721AFD5C1004460D0 /* TestViewController.m */,
 				54F1FB6821AFD5C1004460D0 /* TestViewController.xib */,
+				54AB39C121D86E7200D40606 /* PersonalViewController.h */,
+				54AB39C221D86E7200D40606 /* PersonalViewController.m */,
+				54AB39D021D8A85600D40606 /* MyGoldViewController.h */,
+				54AB39D121D8A85600D40606 /* MyGoldViewController.m */,
+				54AB39D921D8BC3E00D40606 /* MyTeacherViewController.h */,
+				54AB39DA21D8BC3E00D40606 /* MyTeacherViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1006,6 +1052,7 @@
 		5472809F21C0DEDB009A75E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				54AB39C421D895DE00D40606 /* 个人信息 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1368,6 +1415,47 @@
 			name = TaoBaoCutomer;
 			sourceTree = "<group>";
 		};
+		54AB39C421D895DE00D40606 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				54AB39D321D8B96800D40606 /* 我的导师 */,
+				54AB39C521D89B3E00D40606 /* 我的金币 */,
+				5483743521D7685A00FC926E /* PersonalNoneLogonHeader.h */,
+				5483743621D7685A00FC926E /* PersonalNoneLogonHeader.m */,
+				5483743721D7685A00FC926E /* PersonalNoneLogonHeader.xib */,
+				54AB39B421D85E1900D40606 /* PersonalLogonHeader.h */,
+				54AB39B521D85E1900D40606 /* PersonalLogonHeader.m */,
+				54AB39B621D85E1900D40606 /* PersonalLogonHeader.xib */,
+				54AB39BC21D86B6200D40606 /* PersonCollectionViewCell.h */,
+				54AB39BD21D86B6200D40606 /* PersonCollectionViewCell.m */,
+				54AB39BE21D86B6200D40606 /* PersonCollectionViewCell.xib */,
+			);
+			name = "个人信息";
+			sourceTree = "<group>";
+		};
+		54AB39C521D89B3E00D40606 /* 我的金币 */ = {
+			isa = PBXGroup;
+			children = (
+				54AB39C621D89B7C00D40606 /* MyGoldReusableView.h */,
+				54AB39C721D89B7C00D40606 /* MyGoldReusableView.m */,
+				54AB39C821D89B7C00D40606 /* MyGoldReusableView.xib */,
+				54AB39CB21D89BB100D40606 /* GoldTaskCollectionViewCell.h */,
+				54AB39CC21D89BB100D40606 /* GoldTaskCollectionViewCell.m */,
+				54AB39CD21D89BB100D40606 /* GoldTaskCollectionViewCell.xib */,
+			);
+			name = "我的金币";
+			sourceTree = "<group>";
+		};
+		54AB39D321D8B96800D40606 /* 我的导师 */ = {
+			isa = PBXGroup;
+			children = (
+				54AB39D421D8B9D600D40606 /* TeacherNoneWelfareCell.h */,
+				54AB39D521D8B9D600D40606 /* TeacherNoneWelfareCell.m */,
+				54AB39D621D8B9D600D40606 /* TeacherNoneWelfareCell.xib */,
+			);
+			name = "我的导师";
+			sourceTree = "<group>";
+		};
 		54AD34AA21AE9D99004FAEF5 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1429,6 +1517,7 @@
 			children = (
 				54FD258F21AD3B370082FE3A /* Factory.h */,
 				54FD259021AD3B370082FE3A /* Factory.m */,
+				54AB39DC21D8C76500D40606 /* YDSingleton.h */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1559,6 +1648,7 @@
 				544DD4A921C3C9C70052D469 /* IdentityCell.xib in Resources */,
 				544DD48321C38B6C0052D469 /* MENU_0_0_10.PNG in Resources */,
 				544DD49F21C3C7450052D469 /* IdentityTopReusableView.xib in Resources */,
+				54AB39D821D8B9D600D40606 /* TeacherNoneWelfareCell.xib in Resources */,
 				544DD46221C38B6C0052D469 /* h1.jpg in Resources */,
 				544DD44E21C38B6C0052D469 /* cell_01.PNG in Resources */,
 				544DD44B21C38B6C0052D469 /* 542a6ae4N2697c3c6.jpg in Resources */,
@@ -1569,10 +1659,12 @@
 				54F1FB6A21AFD5C1004460D0 /* TestViewController.xib in Resources */,
 				544DD45521C38B6C0052D469 /* h4.jpg in Resources */,
 				5452FB2721B6786600137441 /* h4.jpg in Resources */,
+				54AB39CF21D89BB100D40606 /* GoldTaskCollectionViewCell.xib in Resources */,
 				54AF6FEF21BB6FBE00E264EB /* YDHome.storyboard in Resources */,
 				544DD47721C38B6C0052D469 /* MENU_0_0_5.PNG in Resources */,
 				544DD45F21C38B6C0052D469 /* 542a6d0aN776ff1a3.jpg in Resources */,
 				544DD46421C38B6C0052D469 /* guide_1334x750_frame4.jpg in Resources */,
+				54AB39CA21D89B7C00D40606 /* MyGoldReusableView.xib in Resources */,
 				549EFB9E21BF74A700461469 /* ShareSDK.bundle in Resources */,
 				544DD47021C38B6C0052D469 /* C_0.PNG in Resources */,
 				547280B921C11313009A75E8 /* HomeSectionHeaderView.xib in Resources */,
@@ -1586,6 +1678,7 @@
 				54C6F03321AB87B200679607 /* LaunchScreen.storyboard in Resources */,
 				544DD46621C38B6C0052D469 /* MENU_0_0_2.PNG in Resources */,
 				544DD47421C38B6C0052D469 /* h3.jpg in Resources */,
+				54AB39B821D85E1900D40606 /* PersonalLogonHeader.xib in Resources */,
 				544DD45321C38B6C0052D469 /* 544a19baNacd804c8.jpg in Resources */,
 				544DD45121C38B6C0052D469 /* MENU_0_0_11.PNG in Resources */,
 				544DD44921C38B6C0052D469 /* 542a6bbaN6518d78e.jpg in Resources */,
@@ -1601,6 +1694,7 @@
 				54A5B0D721D3155E00F3CA27 /* DetailInfoCell.xib in Resources */,
 				5452FB2921B6786600137441 /* h2.jpg in Resources */,
 				5452FB2821B6786600137441 /* pageControlDot@3x.png in Resources */,
+				5483743921D7685B00FC926E /* PersonalNoneLogonHeader.xib in Resources */,
 				544DD44C21C38B6C0052D469 /* 542a6bacNfae97760.jpg in Resources */,
 				547280B421C0FA29009A75E8 /* HomeHeaderCollectionViewCell.xib in Resources */,
 				544DD47D21C38B6C0052D469 /* cell_05.PNG in Resources */,
@@ -1609,6 +1703,7 @@
 				544DD4A421C3C7660052D469 /* IdentityDefaultReusableView.xib in Resources */,
 				544DD48821C38B6C0052D469 /* guide_1334x750_frame3.jpg in Resources */,
 				544DD48721C38B6C0052D469 /* 542a6b92N986b93aa.jpg in Resources */,
+				54AB39C021D86B6200D40606 /* PersonCollectionViewCell.xib in Resources */,
 				544DD45221C38B6C0052D469 /* guide_1334x750_frame2.jpg in Resources */,
 				5452FB2A21B6786600137441 /* h1.jpg in Resources */,
 				5442871221CC78E80022C5EA /* InHomeHeaderCell.xib in Resources */,
@@ -1692,9 +1787,11 @@
 				546DE13A21D25BAA00938B49 /* GSCustomNavBar.m in Sources */,
 				54A5047221B7C6A000984537 /* YDLogInViewController.m in Sources */,
 				54CF9A0D21BA423800E9142F /* leftTagModel.m in Sources */,
+				5483743821D7685B00FC926E /* PersonalNoneLogonHeader.m in Sources */,
 				5421092321C210D800CCA43C /* CommodityTableViewController.m in Sources */,
 				5421090021C20AC000CCA43C /* UIImage+Extension.m in Sources */,
 				54C68EA621C8E769003CE99E /* ConfirmTeacherViewController.m in Sources */,
+				54AB39D221D8A85600D40606 /* MyGoldViewController.m in Sources */,
 				5421092021C20FBF00CCA43C /* CollectionHeader.m in Sources */,
 				542C5E3721C9F4A300EA0003 /* HomeGoodModel.m in Sources */,
 				54A5B0DB21D3158500F3CA27 /* ShopDetailCell.m in Sources */,
@@ -1712,6 +1809,7 @@
 				54C6F02B21AB87A200679607 /* ViewController.m in Sources */,
 				5412D41821ACEE81001440C9 /* NSObject+MJExtension.m in Sources */,
 				54CF9A1A21BA444B00E9142F /* rightCollectionViewCell.m in Sources */,
+				54AB39B721D85E1900D40606 /* PersonalLogonHeader.m in Sources */,
 				540E043021BE50D4006BE7B2 /* PersonalTableViewController.m in Sources */,
 				5493523A21AD2D1800192823 /* NSObject+ViewModel.m in Sources */,
 				547280AF21C0E430009A75E8 /* SearchBarView.m in Sources */,
@@ -1720,6 +1818,7 @@
 				549BDB0D21C8CB060001F3EA /* LoginViewController.m in Sources */,
 				5421091B21C20FBF00CCA43C /* MultilevelCollectionViewCell.m in Sources */,
 				5499FD2B21B77BF8000FE212 /* AppDelegate+YDShareSDK.m in Sources */,
+				54AB39CE21D89BB100D40606 /* GoldTaskCollectionViewCell.m in Sources */,
 				549EF9EA21BF521800461469 /* PlistDataManager.m in Sources */,
 				5421090921C20DE300CCA43C /* CategoryMeunModel.m in Sources */,
 				541C277921AD24D400CB89FB /* UIScrollView+Refresh.m in Sources */,
@@ -1729,13 +1828,16 @@
 				549EF9E721BF4BA500461469 /* CityDataModel.m in Sources */,
 				549A663621B8D3340059EE89 /* UIBarButtonItem+PPBadgeView.m in Sources */,
 				5470579A21ABD9DD0087E4BD /* NSObject+AFNetworking.m in Sources */,
+				54AB39DB21D8BC3E00D40606 /* MyTeacherViewController.m in Sources */,
 				54CF9A1E21BA453900E9142F /* menuTableViewController.m in Sources */,
 				5452FB1A21B6134A00137441 /* YDPopTopOutView.m in Sources */,
 				5472808521C0BAF8009A75E8 /* UIBarButtonItem+ButtonToBarButtonItem.m in Sources */,
 				54D2039C21AE378D00E18819 /* HomeViewController.m in Sources */,
+				54AB39C321D86E7200D40606 /* PersonalViewController.m in Sources */,
 				54FD259121AD3B370082FE3A /* Factory.m in Sources */,
 				5412E7AB21AD1B010056AB12 /* NSObject+Parse.m in Sources */,
 				5470579D21ABE5500087E4BD /* YDNetManager.m in Sources */,
+				54AB39C921D89B7C00D40606 /* MyGoldReusableView.m in Sources */,
 				547280B821C11313009A75E8 /* HomeSectionHeaderView.m in Sources */,
 				549A663521B8D3340059EE89 /* UITabBarItem+PPBadgeView.m in Sources */,
 				54CF9A2421BA66C800E9142F /* YDVSegmentView.m in Sources */,
@@ -1755,6 +1857,8 @@
 				54C6F02821AB87A200679607 /* AppDelegate.m in Sources */,
 				5421091A21C20FBF00CCA43C /* CommodityTableViewCell.m in Sources */,
 				544DD4A321C3C7660052D469 /* IdentityDefaultReusableView.m in Sources */,
+				54AB39BF21D86B6200D40606 /* PersonCollectionViewCell.m in Sources */,
+				54AB39D721D8B9D600D40606 /* TeacherNoneWelfareCell.m in Sources */,
 				5470579421ABA1C60087E4BD /* AppDelegate+System.m in Sources */,
 				542F8DB721C8891100371620 /* CategoryLeftViewModel.m in Sources */,
 				5472808821C0D756009A75E8 /* UIView+Extension.m in Sources */,

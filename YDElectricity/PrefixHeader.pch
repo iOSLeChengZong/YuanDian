@@ -50,6 +50,8 @@
 
 #import "UIButton+YDButtonHitRect.h"
 
+//单例
+#import "YDSingleton.h"
 
 
 

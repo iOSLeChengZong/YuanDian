@@ -29,13 +29,17 @@
 // 导航栏高度
 #define NAVIGATION_BAR_HEIGHT (iPhoneX ? 88.f : 64.f)
 
-/// 导航栏高度（不包括状态栏）
+// 导航栏高度（不包括状态栏）
 #define NAVI_BAR_HEIGHT 44.0f
 
-/// Tab Bar高度
+// Tab Bar高度
 #define TABBAR_HEIGHT (iPhoneX ? (49.f+34.f) : 49.f)
 #define kWidthScall kScreenW / 375.0 //这里的375我是针对6s为标准适配的,如果需要其他标准可以修改
 #define kHightScall kScreenH / 667.0
+
+//点相对于相素倍数
+#define kiPhonePointmultiple (iPhone5 | iPhone6 | iPhoneXR ? 2 : 3 )
+
 
 //字体适配
 #define font(R) (R)*(kScreenWidth)/320.0  //这里是5s屏幕字体
@@ -69,6 +73,14 @@ __block __weak __typeof(&*self)weakSelf = self;\
 //确认导师 segue
 #define kConfirmTeacherSegue @"ConfirmTeacherSegue"
 
-//https://www.jianshu.com/p/ba98b0ad1811 iOS截屏
 
+
+
+
+
+
+
+//https://www.jianshu.com/p/ba98b0ad1811 iOS截屏
+//wifi密码
+//ydkj66666
 #endif /* Constant_h */

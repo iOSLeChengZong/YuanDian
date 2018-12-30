@@ -279,6 +279,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="27.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="y_h_shouyi" translatesAutoresizingMaskIntoConstraints="NO" id="foc-ik-gpe">
+                                    <rect key="frame" x="15" y="6.5" width="14" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15" id="leV-QA-uor"/>
+                                        <constraint firstAttribute="width" constant="14" id="weN-fc-ees"/>
+                                    </constraints>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预估收益" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwZ-PO-OQ9">
                                     <rect key="frame" x="43" y="6" width="53.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -295,15 +302,17 @@
                             <color key="backgroundColor" red="1" green="0.2547732318" blue="0.32815397219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="v6L-i6-DyA" firstAttribute="centerY" secondItem="cwZ-PO-OQ9" secondAttribute="centerY" id="KML-T0-Of2"/>
+                                <constraint firstItem="foc-ik-gpe" firstAttribute="leading" secondItem="QjC-dn-h11" secondAttribute="leading" constant="15" id="TxU-uT-Pj9"/>
                                 <constraint firstItem="v6L-i6-DyA" firstAttribute="leading" secondItem="cwZ-PO-OQ9" secondAttribute="trailing" constant="5" id="bwi-70-FxO"/>
                                 <constraint firstItem="cwZ-PO-OQ9" firstAttribute="leading" secondItem="QjC-dn-h11" secondAttribute="leading" constant="43" id="igP-g3-DYF"/>
+                                <constraint firstItem="foc-ik-gpe" firstAttribute="centerY" secondItem="QjC-dn-h11" secondAttribute="centerY" id="nQr-2b-gRD"/>
                                 <constraint firstItem="cwZ-PO-OQ9" firstAttribute="centerY" secondItem="QjC-dn-h11" secondAttribute="centerY" id="xh3-28-EFD"/>
                             </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="1vQ-qL-bSh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="315" id="upE-vI-juR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="315" id="upE-vI-juR">
                                         <rect key="frame" x="0.0" y="27.5" width="375" height="315"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="upE-vI-juR" id="nEP-NI-wgB">
@@ -388,7 +397,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstItem="23h-aF-7ug" firstAttribute="baseline" secondItem="rEB-hf-EtI" secondAttribute="baseline" id="4pd-6s-rLh"/>
                                                                         <constraint firstItem="23h-aF-7ug" firstAttribute="top" secondItem="rng-ZD-Yee" secondAttribute="top" id="8Gd-8v-Kgd"/>
@@ -416,7 +425,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstItem="bH6-zl-3x6" firstAttribute="top" secondItem="Ses-4s-dK7" secondAttribute="top" id="Dsq-8e-LZu"/>
                                                                         <constraint firstAttribute="bottom" secondItem="bH6-zl-3x6" secondAttribute="bottom" id="Ra6-cs-jsw"/>
@@ -553,7 +562,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="259" id="7tW-Fs-p60">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="259" id="7tW-Fs-p60">
                                         <rect key="frame" x="0.0" y="342.5" width="375" height="259"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7tW-Fs-p60" id="vfP-eL-UsS">
@@ -686,6 +695,9 @@
                                                             <state key="normal" title="分享图片" backgroundImage="y_h_分享赚0">
                                                                 <color key="titleColor" red="1" green="0.062623139610000003" blue="0.057482722399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="shareImage:" destination="9FL-h2-Stt" eventType="touchUpInside" id="FSy-SN-43z"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -727,10 +739,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="shareProfitView" destination="PHV-Ff-JnH" id="zOE-YX-Ghb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFz-Eh-CJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066" y="627"/>
+            <point key="canvasLocation" x="2064.8000000000002" y="626.53673163418296"/>
         </scene>
         <!--首页-->
         <scene sceneID="Upy-cV-ofa">
@@ -794,6 +809,7 @@
         <image name="y_h_coupons2" width="62.5" height="12.5"/>
         <image name="y_h_return0" width="7.5" height="15.5"/>
         <image name="y_h_service" width="19.5" height="18.5"/>
+        <image name="y_h_shouyi" width="14" height="15"/>
         <image name="y_h_tianmao" width="20.5" height="17.5"/>
         <image name="y_h_分享赚0" width="165.5" height="35"/>
     </resources>
