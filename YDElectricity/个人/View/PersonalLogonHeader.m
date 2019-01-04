@@ -15,4 +15,21 @@
     // Initialization code
 }
 
+- (IBAction)OnMessageBtnClick:(id)sender {
+    NSLog(@"OnMessageBtnClick");
+    !_personalClickHander ?: _personalClickHander(PersonalLogonHeaderClickMessage);
+}
+
+- (IBAction)OnEditorBtnClick:(id)sender {
+    NSLog(@"OnEditorBtnClick");
+    
+    !_personalClickHander ?: _personalClickHander(PersonalLogonHeaderClickEditor);
+}
+
+
+-(void)addClickHandler:(void (^)(PersonalLogonHeaderClick))handler{
+    _personalClickHander = handler;
+}
+
+
 @end

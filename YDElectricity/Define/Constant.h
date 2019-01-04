@@ -51,6 +51,8 @@
 
 //全局的灰色
 #define kNaviBarBGColor kRGBA(215,215,215,1.0)
+//全局View背景色
+#define kViewBGColor    kRGBA(237,255,253,1.0)
 
 //appdelegate的实例对象
 #define kAppdelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)

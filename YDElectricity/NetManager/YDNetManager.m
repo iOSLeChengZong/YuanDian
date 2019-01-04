@@ -54,9 +54,6 @@
     return [self POST:path parameters:parmas progress:nil completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
         if (!error) {
             !completionHandler ?: completionHandler([HomeGoodModel parse:responseObj],error);
-//            HomeGoodModel *hm = [HomeGoodModel parse:responseObj];
-//
-//            NSLog(@"YYYYY:%lu,lllll:%@",hm.pageList.count,hm.pageList[0]);
         }
     }];
 }
@@ -84,6 +81,19 @@
 }
 
 
+//分类 -> 商品详情
++(id)getCategoryCommodityListDataWithPath:(NSString *)path requestWord:(NSString *)requestW requestPram:(NSString *)pra classID:(NSString *)ID pageNum:(NSInteger)page goodNum:(NSInteger)goodNum completionHandler:(void (^)(HomeGoodModel * _Nonnull, NSError * _Nonnull))completionHandler{
+    NSMutableDictionary *parmas = [NSMutableDictionary new];
+    [parmas setObject:ID forKey:@"goodsClassId"];//类型
+    [parmas setObject:pra forKey:requestW];
+    [parmas setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"pageNo"];//页码
+    [parmas setObject:[NSString stringWithFormat:@"%ld",goodNum] forKey:@"pageSize"];//数量
+    return [self POST:path parameters:parmas progress:nil completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+        if (!error) {
+            !completionHandler ?: completionHandler([HomeGoodModel parse:responseObj],error);
+        }
+    }];
+}
 
 //test
 +(id)getShopInfoWithPath:(NSString *)path param:(NSString *)params completionHandler:(void (^)(id _Nonnull, NSError * _Nonnull))completionHandler{

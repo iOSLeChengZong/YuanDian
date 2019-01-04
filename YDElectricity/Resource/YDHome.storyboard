@@ -54,6 +54,31 @@
             </objects>
             <point key="canvasLocation" x="-1158" y="627"/>
         </scene>
+        <!--商品列表-->
+        <scene sceneID="MyF-4z-BqX">
+            <objects>
+                <viewController storyboardIdentifier="CommodityListlViewController" hidesBottomBarWhenPushed="YES" id="8Lt-bJ-GvQ" customClass="CommodityListlViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k6i-19-bfS"/>
+                        <viewControllerLayoutGuide type="bottom" id="w9H-cw-ZTO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v9d-jQ-x7q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="商品列表" id="3Tj-um-yS2">
+                        <barButtonItem key="leftBarButtonItem" image="y_h_return0" id="mjn-Wc-Nhg">
+                            <connections>
+                                <action selector="CommodityListVCBackBtnClick:" destination="8Lt-bJ-GvQ" id="MK3-RZ-td7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jO5-zb-EgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-828" y="1335.3823088455774"/>
+        </scene>
         <!--Tao Bao Customer Detail View Controller-->
         <scene sceneID="XTj-RJ-npD">
             <objects>
@@ -802,6 +827,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgB-lm-2Sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1271" y="627"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VI7-nB-hda">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5DJ-F5-Tyh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eME-2i-Iuc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Lt-bJ-GvQ" kind="relationship" relationship="rootViewController" id="PBc-JV-bHG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGg-14-kew" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1767.2" y="1334.4827586206898"/>
         </scene>
     </scenes>
     <resources>

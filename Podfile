@@ -28,5 +28,8 @@ target 'YDElectricity' do
     pod 'SJAttributesFactory'
     
     pod 'SDWebImage'
+    
+    #选择器
+    pod 'BRPickerView'
 end
 

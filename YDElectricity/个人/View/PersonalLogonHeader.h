@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSInteger,PersonalLogonHeaderClick) {
+    PersonalLogonHeaderClickMessage,
+    PersonalLogonHeaderClickEditor,
+};
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonalLogonHeader : UICollectionReusableView
+@property(nonatomic,copy) void(^personalClickHander)(PersonalLogonHeaderClick);
+-(void)addClickHandler:(void(^)(PersonalLogonHeaderClick click))handler;
 
 @end
 

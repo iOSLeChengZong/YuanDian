@@ -12,6 +12,8 @@
 #import "PersonCollectionViewCell.h"
 #import "MyGoldViewController.h"
 #import "MyTeacherViewController.h"
+#import "PersonalSystemMessageViewController.h"
+#import "PersonalEditorDataViewController.h"
 
 #define kPersonalNoneLogonHeader @"PersonalNoneLogonHeader"
 #define kPersonalLogonHeader @"PersonalLogonHeader"
@@ -92,7 +94,26 @@
 
 // The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    PersonalNoneLogonHeader *header = [self.personalCollectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kPersonalNoneLogonHeader forIndexPath:indexPath];
+    PersonalLogonHeader *header = [self.personalCollectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kPersonalLogonHeader forIndexPath:indexPath];
+    
+    
+    [header addClickHandler:^(PersonalLogonHeaderClick click) {
+        NSLog(@"在这里完成消息界面跳转");
+        
+        if (click == PersonalLogonHeaderClickMessage) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YDPersonal" bundle:nil];
+            PersonalSystemMessageViewController *systemMeVC = [storyboard instantiateViewControllerWithIdentifier:@"PersonalSystemMessageViewController"];
+            [self.navigationController pushViewController:systemMeVC animated:YES];
+            
+        }
+        
+        if (click == PersonalLogonHeaderClickEditor) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YDPersonal" bundle:nil];
+            PersonalEditorDataViewController *editorVC = [storyboard instantiateViewControllerWithIdentifier:@"PersonalEditorDataViewController"];
+            [self.navigationController pushViewController:editorVC animated:YES];
+        }
+        
+    }];
     CGRect frame = header.frame;
     frame.origin.y -= STATUS_BAR_HEIGHT;
     header.frame = frame;

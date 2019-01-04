@@ -47,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)getCategortyLeftDataWithPath:(NSString *)path completionHandler:(void(^)(CategoryLeftMenuModel *model,NSError *error))completionHandler;
 + (id)getCategoryRightDataWithPath:(NSString *)path parameter:(NSString *)parameter completionHandler:(void(^)(CategoryRightMenuModel *model,NSError *error))completionHandler;
 
+/** 分类获取商品列表 */
++ (id)getCategoryCommodityListDataWithPath:(NSString *)path requestWord:(NSString *)requestW requestPram:(NSString *)pra classID:(NSString *)ID pageNum:(NSInteger)page goodNum:(NSInteger)goodNum completionHandler:(void(^)(HomeGoodModel *model,NSError *error))completionHandler;
+
 
 //test
 + (id)getShopInfoWithPath:(NSString *)path param:(NSString *)params completionHandler:(void(^)(id model,NSError *error))completionHandler;
