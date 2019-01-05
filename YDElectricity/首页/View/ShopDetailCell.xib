@@ -194,6 +194,14 @@
                 <constraint firstItem="2cu-HB-qua" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18" id="nvG-Fa-Hgx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="babyDetailScore" destination="w6m-XH-Cih" id="vyp-Yo-zmU"/>
+                <outlet property="experienceName" destination="y45-mu-czS" id="aWw-1e-QdV"/>
+                <outlet property="logisticsScore" destination="Kb1-J6-duq" id="6ZT-bC-mFm"/>
+                <outlet property="sellerScore" destination="Pzr-RL-K7g" id="qxb-qV-bZi"/>
+                <outlet property="shopImageName" destination="k67-ar-uKS" id="isI-NQ-MZe"/>
+                <outlet property="shopName" destination="2cu-HB-qua" id="3nS-t0-kq9"/>
+            </connections>
             <point key="canvasLocation" x="55.200000000000003" y="48.575712143928037"/>
         </collectionViewCell>
     </objects>

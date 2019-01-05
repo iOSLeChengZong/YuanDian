@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		540A04FB21C881B500F31712 /* CategoryLeftMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 540A04FA21C881B500F31712 /* CategoryLeftMenuModel.m */; };
+		540A241421E05BDD0045E19C /* TaoBaoKeDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 540A241321E05BDD0045E19C /* TaoBaoKeDetailViewModel.m */; };
 		540E043021BE50D4006BE7B2 /* PersonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 540E042F21BE50D4006BE7B2 /* PersonalTableViewController.m */; };
 		5412D41821ACEE81001440C9 /* NSObject+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5412D41721ACEE81001440C9 /* NSObject+MJExtension.m */; };
 		5412E7AB21AD1B010056AB12 /* NSObject+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5412E7AA21AD1B010056AB12 /* NSObject+Parse.m */; };
@@ -240,7 +241,6 @@
 		54D2039C21AE378D00E18819 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D2039B21AE378D00E18819 /* HomeViewController.m */; };
 		54E26FFB21DF62A40052B5B9 /* HomeProductCellOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E26FF921DF62A40052B5B9 /* HomeProductCellOne.m */; };
 		54E26FFC21DF62A40052B5B9 /* HomeProductCellOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54E26FFA21DF62A40052B5B9 /* HomeProductCellOne.xib */; };
-		54E26FFF21DF747C0052B5B9 /* CommodityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E26FFE21DF747C0052B5B9 /* CommodityTableViewController.m */; };
 		54ED83A421DC924F00EB5488 /* GoodListCollectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ED83A221DC924F00EB5488 /* GoodListCollectionHeader.m */; };
 		54ED83A521DC924F00EB5488 /* GoodListCollectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54ED83A321DC924F00EB5488 /* GoodListCollectionHeader.xib */; };
 		54ED83AA21DC946E00EB5488 /* SystemMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ED83A821DC946E00EB5488 /* SystemMessage.m */; };
@@ -262,6 +262,8 @@
 		253EDE59FF148D70675A94AA /* libPods-YDElectricity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YDElectricity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		540A04F921C881B500F31712 /* CategoryLeftMenuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryLeftMenuModel.h; sourceTree = "<group>"; };
 		540A04FA21C881B500F31712 /* CategoryLeftMenuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryLeftMenuModel.m; sourceTree = "<group>"; };
+		540A241221E05BDD0045E19C /* TaoBaoKeDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaoBaoKeDetailViewModel.h; sourceTree = "<group>"; };
+		540A241321E05BDD0045E19C /* TaoBaoKeDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaoBaoKeDetailViewModel.m; sourceTree = "<group>"; };
 		540E042E21BE50D4006BE7B2 /* PersonalTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalTableViewController.h; sourceTree = "<group>"; };
 		540E042F21BE50D4006BE7B2 /* PersonalTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalTableViewController.m; sourceTree = "<group>"; };
 		5412D41621ACEE81001440C9 /* NSObject+MJExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJExtension.h"; sourceTree = "<group>"; };
@@ -598,8 +600,6 @@
 		54E26FF821DF62A40052B5B9 /* HomeProductCellOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeProductCellOne.h; sourceTree = "<group>"; };
 		54E26FF921DF62A40052B5B9 /* HomeProductCellOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeProductCellOne.m; sourceTree = "<group>"; };
 		54E26FFA21DF62A40052B5B9 /* HomeProductCellOne.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeProductCellOne.xib; sourceTree = "<group>"; };
-		54E26FFD21DF747C0052B5B9 /* CommodityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommodityTableViewController.h; path = "YDElectricity/个人/首页/ViewController/CommodityTableViewController.h"; sourceTree = SOURCE_ROOT; };
-		54E26FFE21DF747C0052B5B9 /* CommodityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommodityTableViewController.m; path = "YDElectricity/个人/首页/ViewController/CommodityTableViewController.m"; sourceTree = SOURCE_ROOT; };
 		54ED83A121DC924F00EB5488 /* GoodListCollectionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodListCollectionHeader.h; sourceTree = "<group>"; };
 		54ED83A221DC924F00EB5488 /* GoodListCollectionHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodListCollectionHeader.m; sourceTree = "<group>"; };
 		54ED83A321DC924F00EB5488 /* GoodListCollectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodListCollectionHeader.xib; sourceTree = "<group>"; };
@@ -664,6 +664,15 @@
 				0A818C906F77A99A42624389 /* Pods-YDElectricity.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		540A241121E05BA60045E19C /* 淘宝客详情 */ = {
+			isa = PBXGroup;
+			children = (
+				540A241221E05BDD0045E19C /* TaoBaoKeDetailViewModel.h */,
+				540A241321E05BDD0045E19C /* TaoBaoKeDetailViewModel.m */,
+			);
+			name = "淘宝客详情";
 			sourceTree = "<group>";
 		};
 		542108FA21C2020200CCA43C /* Main */ = {
@@ -942,7 +951,6 @@
 		5472808F21C0DE62009A75E8 /* 个人 */ = {
 			isa = PBXGroup;
 			children = (
-				5472808C21C0DE62009A75E8 /* 首页 */,
 				5472809E21C0DEDB009A75E8 /* Model */,
 				5472809F21C0DEDB009A75E8 /* View */,
 				5472809C21C0DEDA009A75E8 /* ViewController */,
@@ -977,6 +985,7 @@
 		5472809221C0DEAE009A75E8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				540A241121E05BA60045E19C /* 淘宝客详情 */,
 				54AD7C5121C33BEC0054D34A /* CategoryViewModel.h */,
 				54AD7C5221C33BEC0054D34A /* CategoryViewModel.m */,
 				542F8DB521C8891100371620 /* CategoryLeftViewModel.h */,
@@ -1143,8 +1152,6 @@
 		547280A121C0DF69009A75E8 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
-				54E26FFD21DF747C0052B5B9 /* CommodityTableViewController.h */,
-				54E26FFE21DF747C0052B5B9 /* CommodityTableViewController.m */,
 				5421090121C20D9200CCA43C /* CategoryViewController.h */,
 				5421090221C20D9200CCA43C /* CategoryViewController.m */,
 				54CF9A1C21BA453900E9142F /* menuTableViewController.h */,
@@ -1580,6 +1587,7 @@
 				5470579621ABD5410087E4BD /* NetManager */,
 				5472808D21C0DE62009A75E8 /* 创业 */,
 				5472808E21C0DE62009A75E8 /* 发现 */,
+				5472808C21C0DE62009A75E8 /* 首页 */,
 				5472808F21C0DE62009A75E8 /* 个人 */,
 				549BDB0A21C8CAC40001F3EA /* Login */,
 				542108FA21C2020200CCA43C /* Main */,
@@ -1917,7 +1925,6 @@
 				54239DDE21DE047800E12690 /* CommodityListlViewController.m in Sources */,
 				5442871121CC78E80022C5EA /* InHomeHeaderCell.m in Sources */,
 				5440BAF221ACD7E50015C8F7 /* MJStudent.m in Sources */,
-				54E26FFF21DF747C0052B5B9 /* CommodityTableViewController.m in Sources */,
 				542F8DBA21C8991800371620 /* CategoryRightMenuModel.m in Sources */,
 				544DD4A821C3C9C70052D469 /* IdentityCell.m in Sources */,
 				54A5B0D121D3151E00F3CA27 /* CustomerHeaderCell.m in Sources */,
@@ -1983,6 +1990,7 @@
 				547280B821C11313009A75E8 /* HomeSectionHeaderView.m in Sources */,
 				54ED83A421DC924F00EB5488 /* GoodListCollectionHeader.m in Sources */,
 				549A663521B8D3340059EE89 /* UITabBarItem+PPBadgeView.m in Sources */,
+				540A241421E05BDD0045E19C /* TaoBaoKeDetailViewModel.m in Sources */,
 				54CF9A2421BA66C800E9142F /* YDVSegmentView.m in Sources */,
 				54F1FA9621AF8C4D004460D0 /* TestModel.m in Sources */,
 				546DE13B21D25BAA00938B49 /* GSExtensibleTableHeader.m in Sources */,

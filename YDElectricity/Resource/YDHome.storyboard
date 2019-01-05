@@ -258,6 +258,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xHi-HA-Zf6" id="5Ew-Pt-hd6"/>
+                                    <outlet property="delegate" destination="xHi-HA-Zf6" id="FU2-y9-YjQ"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23B-Ng-iy1">
                                 <rect key="frame" x="36" y="42" width="7" height="22"/>
@@ -765,7 +769,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buyLink" destination="JkL-TU-dYU" id="q8U-JU-sbL"/>
+                        <outlet property="codeInfo" destination="kxX-1q-m2j" id="SjJ-7y-r68"/>
+                        <outlet property="couponPrice" destination="QNv-rg-ztc" id="bOS-Bt-LpT"/>
+                        <outlet property="diaoPaiPrice" destination="BZH-9b-UdJ" id="HKX-Gu-awa"/>
+                        <outlet property="discountPrice" destination="rEB-hf-EtI" id="6ZT-yg-xwh"/>
+                        <outlet property="discountPriceTwo" destination="Ria-kx-Fu2" id="1st-N9-EzQ"/>
+                        <outlet property="imageName" destination="fli-6n-rW2" id="nnl-Wb-gCC"/>
+                        <outlet property="mainImage" destination="faa-jf-vAJ" id="emt-Gx-l4Q"/>
+                        <outlet property="originalPrice" destination="uIF-K1-NwD" id="8mR-yI-k3k"/>
+                        <outlet property="sallingPrice" destination="Ter-r6-R1n" id="0hM-oX-XYx"/>
                         <outlet property="shareProfitView" destination="PHV-Ff-JnH" id="zOE-YX-Ghb"/>
+                        <outlet property="title" destination="PHV-Ff-JnH" id="kBF-2q-qga"/>
+                        <outlet property="titleName" destination="VTM-ij-w1O" id="3Wb-CX-ZbC"/>
+                        <outlet property="twoCodeImage" destination="Vu5-ka-Hs4" id="TP8-Ks-WZ1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFz-Eh-CJp" userLabel="First Responder" sceneMemberID="firstResponder"/>

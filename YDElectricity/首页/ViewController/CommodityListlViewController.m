@@ -11,12 +11,13 @@
 #import "HomeProductCell.h"
 #import "HomeViewModel.h"
 #import "HomeProductCellOne.h"
+#import "TaoBaoCustomerDetailViewController.h"
 
 
 #define kHomeProductCell @"HomeProductCell"
 #define kHomeProductCellOne @"HomeProductCellOne"
 
-@interface CommodityListlViewController ()<MenuHeaderViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface CommodityListlViewController ()<MenuHeaderViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong)UICollectionView *commodityListCollectionView;
 
 @property (nonatomic,strong) HomeViewModel *homeVM;
@@ -35,13 +36,17 @@
 
 #pragma mark -- 懒加载
 -(UICollectionView *)commodityListCollectionView{
+    
     if (!_commodityListCollectionView) {
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        
         _commodityListCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT + 44,kScreenW,kScreenH - NAVIGATION_BAR_HEIGHT -44) collectionViewLayout:layout];
         _commodityListCollectionView.backgroundColor = kViewBGColor;
+       
         _commodityListCollectionView.delegate = self;
         _commodityListCollectionView.dataSource = self;
+        
         if (!_isVertical) {
             //itemSize
             layout.itemSize = CGSizeMake((kScreenW - 18) * kWidthScall, 133);
@@ -61,14 +66,13 @@
             layout.sectionInset = UIEdgeInsetsMake(4, 9 , 6 , 9);
             //最小行间距
             layout.minimumLineSpacing = 3;
-            //最大行间距
-            layout.minimumInteritemSpacing = 0;
+            //最小行间距
+            layout.minimumInteritemSpacing = 5;
             
             //注册cell
             [_commodityListCollectionView registerNib:[UINib nibWithNibName:kHomeProductCellOne bundle:nil] forCellWithReuseIdentifier:kHomeProductCellOne];
         }
         
-
         
     }
     return _commodityListCollectionView;
@@ -161,10 +165,7 @@
     }else{
         NSLog(@"当前点击的是布局== %@",model.title);
         self.isVertical = !self.isVertical;
-        [self.commodityListCollectionView removeFromSuperview];
-        self.commodityListCollectionView = nil;
-        [self.view addSubview:self.commodityListCollectionView];
-        [self.commodityListCollectionView reloadData];
+        [self resetCollectionViewLayout];
     }
     
 }
@@ -179,6 +180,12 @@
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@",[self class]);
+    //跳转淘宝客
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YDHome" bundle:nil];
+    TaoBaoCustomerDetailViewController *taoBaoVc = [storyboard instantiateViewControllerWithIdentifier:@"TaoBaoCustomerDetailViewController"];
+    TaoBaoKeDetailViewModel *tbkVM = [[TaoBaoKeDetailViewModel alloc] initWithPageList:self.homeVM.pageList[indexPath.row]];
+    taoBaoVc.tbkVM =  tbkVM;
+    [self.navigationController pushViewController:taoBaoVc animated:YES];
 }
 
 #pragma mark -- UICollectionViewDataSource
@@ -214,6 +221,7 @@
         HomeProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kHomeProductCellOne forIndexPath:indexPath];
         [cell viewcornerRadius:5 borderWith:0.02 clearColor:NO];
         //商品主图
+        [cell.productImageView viewcornerRadius:5 borderWith:0.02 clearColor:NO];
         [cell.productImageView sd_setImageWithURL:[self.homeVM goodCollectionVItemImageURLAtIndexPath:indexPath] placeholderImage:[UIImage imageNamed:@""]];
         //商品标题
         cell.productTitleLabel0.text = [self.homeVM goodCollectionVItemMainTitleAtIndexPath:indexPath];
@@ -232,8 +240,8 @@
         return cell;
     }
     
-    
 }
+
 
 
 #pragma mark -- 方法
@@ -269,6 +277,14 @@
         
         [weakSelf requestData];
     }];
+}
+
+
+- (void)resetCollectionViewLayout{
+    [self.commodityListCollectionView removeFromSuperview];
+     self.commodityListCollectionView = nil;
+    [self.view addSubview:self.commodityListCollectionView];
+    [self.commodityListCollectionView reloadData];
 }
 
 - (IBAction)CommodityListVCBackBtnClick:(id)sender {

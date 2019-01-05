@@ -43,8 +43,9 @@
     [super viewDidLoad];
     [self registerCell];
     [self addGustureForBottomView];
-    self.collectionV.delegate = self;
-    self.collectionV.dataSource = self;
+    
+    
+    
     
 }
 
@@ -68,6 +69,13 @@
     if (indexPath.row == 0)
     {
         DetailInfoCell *cell = [self.collectionV dequeueReusableCellWithReuseIdentifier:kDetailInfoCell forIndexPath:indexPath];
+        cell.imageName.image = [UIImage imageNamed:self.tbkVM.imageName];
+        cell.title.text = self.tbkVM.title;
+        cell.discountPrice.text = self.tbkVM.discountPrice;
+        cell.originalPrice.text = self.tbkVM.originalPrice;
+        cell.monthSaleNum.text = self.tbkVM.monthSaleNum;
+        cell.couponPrice.text = self.tbkVM.couponPrice;
+        cell.serviceLife.text = self.tbkVM.serviceLife;
         [cell viewcornerRadius:5 borderWith:0.05 clearColor:NO];
         
         return cell;
@@ -84,6 +92,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
 
     CustomerHeaderCell *header = [self.collectionV dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCustomerHeaderCell forIndexPath:indexPath];
+    header.imageURLStringsGroup = self.tbkVM.imageURLS;
     CGRect frame = header.frame;
     frame.origin.y -= STATUS_BAR_HEIGHT;
     header.frame = frame;
@@ -163,16 +172,17 @@
 
 -(void)recognizerBuyTap{
     NSLog(@"BuyTap");
+    
 }
 -(void)recognizerShareTap{
     NSLog(@"ShareTap");
     //加载分享赚VC
-//    UIStoryboard *homeStoryb = [UIStoryboard ];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YDHome" bundle:nil];
     ShareProfitTableViewController *shareVC = [storyboard instantiateViewControllerWithIdentifier:@"ShareProfitTableViewController"];
     shareVC.navigationItem.title = @"分享赚";
-//    shareVC.navigationItem.backBarButtonItem = [UIBarButtonItem BarButtonItemWithBackgrounImageName:@"y_h_return0" highBackgroundImageName:@"y_h_return0" target:self aciton:@selector(popViewVC:)];
+    shareVC.tbkVM = self.tbkVM;
     [self.navigationController pushViewController:shareVC animated:YES];
+
     
 }
 

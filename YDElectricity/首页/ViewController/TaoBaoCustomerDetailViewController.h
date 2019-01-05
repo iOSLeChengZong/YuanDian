@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaoBaoKeDetailViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TaoBaoCustomerDetailViewController : UIViewController
+@property (nonatomic,strong)TaoBaoKeDetailViewModel *tbkVM;
 
 @end
 

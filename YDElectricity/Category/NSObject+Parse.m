@@ -25,4 +25,37 @@
     return responseObj;
 }
 
++(id)parseJSONStringToArrayOrDictionaryString:(id)theData{
+    
+    
+    NSError *error = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:[self toJSONData:theData]
+                                                    options:NSJSONReadingAllowFragments
+                                                      error:nil];
+    
+    if (jsonObject != nil && error == nil){
+        return jsonObject;
+    }else{
+        NSLog(@"%@解析错误",[self class]);
+        return nil;
+    }
+}
+
+- (NSData *)toJSONData:(id)theData{
+    NSData *stringData = [theData dataUsingEncoding:NSUTF8StringEncoding];
+    id json = [NSJSONSerialization JSONObjectWithData:stringData options:0 error:nil];
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    if ([jsonData length] > 0 && error == nil){
+        return jsonData;
+    }else{
+        return nil;
+    }
+}
+
+
 @end

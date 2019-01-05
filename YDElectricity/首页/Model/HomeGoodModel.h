@@ -18,6 +18,8 @@
 
 /** 奖励 */
 @property (nonatomic, assign) CGFloat commission;
+/** 优惠券结束时间 */
+@property (nonatomic, strong) NSString * couponEndTime;
 @property (nonatomic, assign) CGFloat commissionRate;
 @property (nonatomic, strong) NSString * couponInfo;
 
@@ -27,7 +29,10 @@
 @property (nonatomic, assign) NSInteger couponRemainCount;
 /** 领券URL */
 @property (nonatomic, strong) NSString * couponShareUrl;
+/** 优惠券开始时间 */
+@property (nonatomic, strong) NSString * couponStartTime;
 @property (nonatomic, assign) NSInteger couponTotalCount;
+
 @property (nonatomic, strong) NSObject * discountRate;
 @property (nonatomic, strong) NSObject * endTime;
 @property (nonatomic, strong) NSObject * goodsClickVolume;

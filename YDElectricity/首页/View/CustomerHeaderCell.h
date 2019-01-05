@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CustomerHeaderCell : UICollectionReusableView<SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
-@property (weak, nonatomic) IBOutlet UILabel *indexPage;
+//@property (weak, nonatomic) IBOutlet UILabel *indexPage;
+@property (strong, nonatomic) UILabel *indexPage;
 
 @property (strong,nonatomic)NSArray *imageURLStringsGroup;
 

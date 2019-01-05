@@ -11,7 +11,6 @@
 #import "CategoryMeunModel.h"
 #import "MultilevelMenu.h"
 #import "AppDelegate.h"
-#import "CommodityTableViewController.h"
 #import "CategoryViewModel.h"
 #import "Factory.h"
 #import "CommodityListlViewController.h"
@@ -45,11 +44,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     //设置导航栏
     [self setupNavigationItem];
-
-    
-
-    
-   
     
 }
 

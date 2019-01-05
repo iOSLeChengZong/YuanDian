@@ -222,9 +222,6 @@
     }];
 }
 
--(NSArray *)requestModeArr{
-    return @[@"coupon_price_desc",@"coupon_price_asc",@"commission_desc",@"desc",@"asc",@"desc",@"asc"];
-}
 
 
 @end

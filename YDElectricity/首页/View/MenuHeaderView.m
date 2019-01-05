@@ -316,8 +316,8 @@
 
 - (void)hideAction
 {
-//    [self clicked:self.currentTapBtn];
-    [self hideMaskView];
+    [self clicked:self.currentTapBtn];
+//    [self hideMaskView];
 }
 
 - (void)showMaskView

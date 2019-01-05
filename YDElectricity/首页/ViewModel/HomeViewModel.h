@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YDNetManager.h"
+#import "TaoBaoKeDetailViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -50,7 +51,7 @@ typedef NS_ENUM(NSInteger,HotOrRecomend) {
 -(void)getHomeHeaderModelDataCompletionHandler:(void(^)(NSError *error))completionHandler;
 
 
-//首页商品
+//首页商品 / 商品详情
 //1.根据UI
 /** 商品item 数量*/
 @property(nonatomic,assign)NSInteger goodCollectionVItemNum;
@@ -73,11 +74,16 @@ typedef NS_ENUM(NSInteger,HotOrRecomend) {
 /** 收益 */
 -(NSString *)goodCollectionVItemProfitAtIndexPath:(NSIndexPath *)indexPath;
 
+//淘宝客详情
+
+
 
 //2.根据接口
 @property(nonatomic,assign)NSInteger totalPage;
 @property(nonatomic,assign)NSInteger pageNum;
+
 @property(nonatomic,strong)NSMutableArray<PageList *> *pageList;
+
 -(void)getHomeGoodModelDataRequestMode:(RequestMode)requestMode pageSize:(NSInteger)pageSize state:(HotOrRecomend)hotOrRecomend CompletionHandler:(void(^)(NSError *error))completionHandler;
 
 //分类商品

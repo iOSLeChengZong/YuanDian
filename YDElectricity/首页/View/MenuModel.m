@@ -67,9 +67,9 @@
             break;
         case ImageTypeChoose:
             if ([state isEqualToString:@"0"]) {
-                imageName = @"y_h_style1";
-            }else{
                 imageName = @"y_h_style0";
+            }else{
+                imageName = @"y_h_style1";
             }
             break;
             

@@ -6,6 +6,24 @@
 //  Copyright © 2018 yuandian. All rights reserved.
 //
 
+
+///** 商品来源图标 */
+//@property(nonatomic,strong)NSString *imageName;
+//
+///** 商品标题 */
+//@property(nonatomic,strong)NSString *title;
+///** 券后价 */
+//@property(nonatomic,strong)NSString *discountPrice;
+///** 原价 */
+//@property(nonatomic,strong)NSString *originalPrice;
+///** 月销 */
+//@property(nonatomic,strong)NSString *monthSaleNum;
+///** 优惠券 */
+//@property(nonatomic,strong)NSString *couponPrice;
+///** 分享界面商品主图 */
+//@property(nonatomic,strong)NSURL *mainImageUrl;
+
+
 //原始尺寸
 static CGRect oldframe;
 
@@ -16,6 +34,25 @@ static CGRect oldframe;
 @property (weak, nonatomic) IBOutlet UIView *shareProfitView;
 //截取分享图
 @property(nonatomic,strong) UIImageView *shareImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *estimatePrice;
+
+@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+@property (weak, nonatomic) IBOutlet UILabel *diaoPaiPrice;
+@property (weak, nonatomic) IBOutlet UIImageView *imageName;
+@property (weak, nonatomic) IBOutlet UILabel *titleName;
+@property (weak, nonatomic) IBOutlet UILabel *discountPrice;
+@property (weak, nonatomic) IBOutlet UILabel *originalPrice;
+@property (weak, nonatomic) IBOutlet UILabel *couponPrice;
+@property (weak, nonatomic) IBOutlet UIImageView *twoCodeImage;
+
+
+
+@property (weak, nonatomic) IBOutlet UILabel *sallingPrice;
+@property (weak, nonatomic) IBOutlet UILabel *discountPriceTwo;
+@property (weak, nonatomic) IBOutlet UILabel *buyLink;
+
+@property (weak, nonatomic) IBOutlet UILabel *codeInfo;
 
 @end
 
@@ -43,11 +80,7 @@ static CGRect oldframe;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setUpShareImageSubView];
 }
 
 
@@ -55,10 +88,7 @@ static CGRect oldframe;
     if (indexPath.row == 0) {
         NSLog(@"ShareProfitCfell:%ld",indexPath.row);
         [self scanBigImageWithImageView];
-        
-        //1.截图 UIImage
-        //2.计算放大尺寸
-        //3.显示放大图
+
         
     }
 }
@@ -206,5 +236,28 @@ static CGRect oldframe;
 }
 
 
+
+-(void)setUpShareImageSubView{
+    /*
+     @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+     @property (weak, nonatomic) IBOutlet UILabel *diaoPaiPrice;
+     @property (weak, nonatomic) IBOutlet UIImageView *imageName;
+     @property (weak, nonatomic) IBOutlet UILabel *titleName;
+     @property (weak, nonatomic) IBOutlet UILabel *discountPrice;
+     
+     @property (weak, nonatomic) IBOutlet UILabel *originalPrice;
+     @property (weak, nonatomic) IBOutlet UILabel *couponPrice;
+     */
+    
+    [self.mainImage sd_setImageWithURL:self.tbkVM.mainImageUrl];
+    self.diaoPaiPrice.text = self.tbkVM.originalPrice;
+    self.imageName.image = [UIImage imageNamed:self.tbkVM.imageName];
+    self.titleName.text = self.tbkVM.title;
+    self.discountPrice.text = self.tbkVM.discountPrice;
+    self.originalPrice.text = self.tbkVM.originalPrice;
+    self.couponPrice.text = self.tbkVM.couponPrice;
+    
+    self.discountPriceTwo.text = self.tbkVM.title;
+}
 
 @end

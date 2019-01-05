@@ -185,13 +185,13 @@
 #pragma mark -- collectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"indexPath:%lu",indexPath.row);
+
+    //跳转淘宝客
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YDHome" bundle:nil];
     TaoBaoCustomerDetailViewController *taoBaoVc = [storyboard instantiateViewControllerWithIdentifier:@"TaoBaoCustomerDetailViewController"];
+    TaoBaoKeDetailViewModel *tbkVM = [[TaoBaoKeDetailViewModel alloc] initWithPageList:self.homeVM.pageList[indexPath.row]];
+    taoBaoVc.tbkVM =  tbkVM;
     [self.navigationController pushViewController:taoBaoVc animated:YES];
-    
-    
-//    [self performSegueWithIdentifier:@"TaoBaoCustomerDetailViewController" sender:indexPath];
-
 }
 
 #pragma mark -- collectionViewDelegateFlowLayout
@@ -415,10 +415,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if (!sender) {
-        NSLog(@"sender:%@",sender);
-    }
-    TaoBaoCustomerDetailViewController *vc = (TaoBaoCustomerDetailViewController *)[segue destinationViewController];
+    
     
     
 }
