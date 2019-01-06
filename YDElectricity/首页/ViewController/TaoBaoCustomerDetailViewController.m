@@ -10,7 +10,8 @@
 #import "CustomerHeaderCell.h"
 #import "DetailInfoCell.h"
 #import "ShopDetailCell.h"
-#import "ShareProfitTableViewController.h"
+#import "ShareTableViewController.h"
+#import "ShareViewController.h"
 
 #define kCustomerHeaderCell @"CustomerHeaderCell"
 #define kDetailInfoCell @"DetailInfoCell"
@@ -42,11 +43,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCell];
-    [self addGustureForBottomView];
-    
-    
-    
-    
+    if (self.tbkVM) {
+        NSLog(@"数据不为空%@",self.tbkVM.imageURLS[0]);
+        
+    }
 }
 
 #pragma mark -- UICollectionViewDelegate
@@ -158,8 +158,8 @@
 -(void)addGustureForBottomView{
     UITapGestureRecognizer *recognizerServer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizerServerTap)];
     UITapGestureRecognizer *recognizerBuy = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizerBuyTap)];
-    UITapGestureRecognizer *recognizerShare = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizerShareTap)];
-    
+    UITapGestureRecognizer *recognizerShare = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizerShareTap:)];
+ 
     [self.server addGestureRecognizer:recognizerServer];
     [self.buyView addGestureRecognizer:recognizerBuy];
     [self.shareView addGestureRecognizer:recognizerShare];
@@ -174,26 +174,36 @@
     NSLog(@"BuyTap");
     
 }
--(void)recognizerShareTap{
-    NSLog(@"ShareTap");
-    //加载分享赚VC
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YDHome" bundle:nil];
-    ShareProfitTableViewController *shareVC = [storyboard instantiateViewControllerWithIdentifier:@"ShareProfitTableViewController"];
-    shareVC.navigationItem.title = @"分享赚";
-    shareVC.tbkVM = self.tbkVM;
-    [self.navigationController pushViewController:shareVC animated:YES];
 
-    
-}
 
 
 - (IBAction)popViewVC:(id)sender {
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 
+- (IBAction)btnclick:(id)sender {
+    NSLog(@"========");
+//    [self recognizerShareTap];
+}
 
+- (IBAction)ShareTap:(UITapGestureRecognizer *)sender {
+    NSLog(@"ShareTap:%@",sender.view);
+    //加载分享赚VC
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"YDHome" bundle:nil];
+
+    ShareViewController *shareVC = [storyboard instantiateViewControllerWithIdentifier:@"ShareViewController"];
+    shareVC.navigationItem.title = @"分享赚";
+    if (self.tbkVM) {
+        NSLog(@"数据不为空222%@",self.tbkVM.imageURLS[0]);
+    }else{
+        NSLog(@"数据是空的");
+    }
+    shareVC.tbkVM = self.tbkVM;
+    [self.navigationController pushViewController:shareVC animated:YES];
+}
 
 
 /*

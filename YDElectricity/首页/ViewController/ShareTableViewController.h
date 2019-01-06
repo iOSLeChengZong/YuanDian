@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ShareProfitTableViewController : UITableViewController
-@property(nonatomic,strong) TaoBaoKeDetailViewModel *tbkVM;
+@interface ShareTableViewController : UITableViewController
+@property(nonatomic,strong) TaoBaoKeDetailViewModel *tbkVM0;
 @end
 
 NS_ASSUME_NONNULL_END

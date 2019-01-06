@@ -192,6 +192,9 @@
     TaoBaoKeDetailViewModel *tbkVM = [[TaoBaoKeDetailViewModel alloc] initWithPageList:self.homeVM.pageList[indexPath.row]];
     taoBaoVc.tbkVM =  tbkVM;
     [self.navigationController pushViewController:taoBaoVc animated:YES];
+    
+    
+    
 }
 
 #pragma mark -- collectionViewDelegateFlowLayout

@@ -27,9 +27,9 @@
 //原始尺寸
 static CGRect oldframe;
 
-#import "ShareProfitTableViewController.h"
+#import "ShareTableViewController.h"
 
-@interface ShareProfitTableViewController ()
+@interface ShareTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *shareProfitView;
 //截取分享图
@@ -56,7 +56,7 @@ static CGRect oldframe;
 
 @end
 
-@implementation ShareProfitTableViewController
+@implementation ShareTableViewController
 
 #pragma mark -- 懒加载
 -(UIImageView *)shareImageView{
@@ -249,15 +249,15 @@ static CGRect oldframe;
      @property (weak, nonatomic) IBOutlet UILabel *couponPrice;
      */
     
-    [self.mainImage sd_setImageWithURL:self.tbkVM.mainImageUrl];
-    self.diaoPaiPrice.text = self.tbkVM.originalPrice;
-    self.imageName.image = [UIImage imageNamed:self.tbkVM.imageName];
-    self.titleName.text = self.tbkVM.title;
-    self.discountPrice.text = self.tbkVM.discountPrice;
-    self.originalPrice.text = self.tbkVM.originalPrice;
-    self.couponPrice.text = self.tbkVM.couponPrice;
+    [self.mainImage sd_setImageWithURL:self.tbkVM0.mainImageUrl];
+    self.diaoPaiPrice.text = self.tbkVM0.originalPrice;
+    self.imageName.image = [UIImage imageNamed:self.tbkVM0.imageName];
+    self.titleName.text = self.tbkVM0.title;
+    self.discountPrice.text = self.tbkVM0.discountPrice;
+    self.originalPrice.text = self.tbkVM0.originalPrice;
+    self.couponPrice.text = self.tbkVM0.couponPrice;
     
-    self.discountPriceTwo.text = self.tbkVM.title;
+    self.discountPriceTwo.text = self.tbkVM0.title;
 }
 
 @end
